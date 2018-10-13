@@ -130,7 +130,7 @@ Partial Class Form1
         Me.btnAdd.Size = New System.Drawing.Size(467, 23)
         Me.btnAdd.Style = MetroFramework.MetroColorStyle.Green
         Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "Add Appointment Now"
+        Me.btnAdd.Text = "Save Appointment"
         Me.btnAdd.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnAdd.UseSelectable = True
         '
