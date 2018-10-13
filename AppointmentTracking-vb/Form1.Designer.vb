@@ -130,7 +130,7 @@ Partial Class Form1
         Me.btnAdd.Size = New System.Drawing.Size(467, 23)
         Me.btnAdd.Style = MetroFramework.MetroColorStyle.Green
         Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "Add Appointment"
+        Me.btnAdd.Text = "Add Appointment Now"
         Me.btnAdd.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnAdd.UseSelectable = True
         '
@@ -207,7 +207,7 @@ Partial Class Form1
         '
         Me.ContextType.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BeautyToolStripMenuItem, Me.DoctorToolStripMenuItem, Me.JobToolStripMenuItem, Me.MechanicToolStripMenuItem})
         Me.ContextType.Name = "MetroContextMenu1"
-        Me.ContextType.Size = New System.Drawing.Size(181, 130)
+        Me.ContextType.Size = New System.Drawing.Size(152, 108)
         Me.ContextType.Style = MetroFramework.MetroColorStyle.Red
         Me.ContextType.Theme = MetroFramework.MetroThemeStyle.Dark
         '
