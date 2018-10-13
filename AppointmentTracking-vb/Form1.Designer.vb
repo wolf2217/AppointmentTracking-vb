@@ -33,13 +33,13 @@ Partial Class Form1
         Me.txtDetails = New MetroFramework.Controls.MetroTextBox()
         Me.txtType = New MetroFramework.Controls.MetroTextBox()
         Me.ContextType = New MetroFramework.Controls.MetroContextMenu(Me.components)
+        Me.BeautyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DoctorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JobToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MechanicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtGetDetails = New MetroFramework.Controls.MetroTextBox()
         Me.btnConfirm = New MetroFramework.Controls.MetroButton()
         Me.btnEdit = New MetroFramework.Controls.MetroButton()
-        Me.DoctorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MechanicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BeautyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JobToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDetails.SuspendLayout()
         Me.ContextType.SuspendLayout()
@@ -130,7 +130,7 @@ Partial Class Form1
         Me.btnAdd.Size = New System.Drawing.Size(467, 23)
         Me.btnAdd.Style = MetroFramework.MetroColorStyle.Green
         Me.btnAdd.TabIndex = 6
-        Me.btnAdd.Text = "Save Appointment"
+        Me.btnAdd.Text = "Save Appointment Now"
         Me.btnAdd.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnAdd.UseSelectable = True
         '
@@ -211,6 +211,34 @@ Partial Class Form1
         Me.ContextType.Style = MetroFramework.MetroColorStyle.Red
         Me.ContextType.Theme = MetroFramework.MetroThemeStyle.Dark
         '
+        'BeautyToolStripMenuItem
+        '
+        Me.BeautyToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BeautyToolStripMenuItem.Name = "BeautyToolStripMenuItem"
+        Me.BeautyToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.BeautyToolStripMenuItem.Text = "&Beauty"
+        '
+        'DoctorToolStripMenuItem
+        '
+        Me.DoctorToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DoctorToolStripMenuItem.Name = "DoctorToolStripMenuItem"
+        Me.DoctorToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.DoctorToolStripMenuItem.Text = "&Doctor"
+        '
+        'JobToolStripMenuItem
+        '
+        Me.JobToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.JobToolStripMenuItem.Name = "JobToolStripMenuItem"
+        Me.JobToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.JobToolStripMenuItem.Text = "&Job"
+        '
+        'MechanicToolStripMenuItem
+        '
+        Me.MechanicToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MechanicToolStripMenuItem.Name = "MechanicToolStripMenuItem"
+        Me.MechanicToolStripMenuItem.Size = New System.Drawing.Size(151, 26)
+        Me.MechanicToolStripMenuItem.Text = "&Mechanic"
+        '
         'txtGetDetails
         '
         '
@@ -262,34 +290,6 @@ Partial Class Form1
         Me.btnEdit.TabIndex = 7
         Me.btnEdit.Text = "Edit this appointment"
         Me.btnEdit.UseSelectable = True
-        '
-        'DoctorToolStripMenuItem
-        '
-        Me.DoctorToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DoctorToolStripMenuItem.Name = "DoctorToolStripMenuItem"
-        Me.DoctorToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.DoctorToolStripMenuItem.Text = "&Doctor"
-        '
-        'MechanicToolStripMenuItem
-        '
-        Me.MechanicToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MechanicToolStripMenuItem.Name = "MechanicToolStripMenuItem"
-        Me.MechanicToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.MechanicToolStripMenuItem.Text = "&Mechanic"
-        '
-        'BeautyToolStripMenuItem
-        '
-        Me.BeautyToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BeautyToolStripMenuItem.Name = "BeautyToolStripMenuItem"
-        Me.BeautyToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.BeautyToolStripMenuItem.Text = "&Beauty"
-        '
-        'JobToolStripMenuItem
-        '
-        Me.JobToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.JobToolStripMenuItem.Name = "JobToolStripMenuItem"
-        Me.JobToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.JobToolStripMenuItem.Text = "&Job"
         '
         'Form1
         '
