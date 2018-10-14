@@ -27,16 +27,21 @@ Public Class Form1
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         'Cancel the save and go back to edit
-
         'Adjust form height
         Me.Height = 230
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-        'save this appointment to the db
 
-        'Adjust form height
-        Me.Height = 230
+        Try
+            'save this appointment to the db
+            doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, "Upcoming")
+            txtGetDetails.Text.Replace("Click confirm below to confirm", "")
+            txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "YOUR APPOINTMENT HAS BEEN SAVED!"
+        Catch ex As Exception
+            'Display error if error occured while saving
+            txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "Could not save appointment because " & ex.Message
+        End Try
     End Sub
 
 #Region "Context Menu Options"

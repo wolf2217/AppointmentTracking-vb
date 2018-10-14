@@ -295,7 +295,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(509, 230)
+        Me.ClientSize = New System.Drawing.Size(509, 389)
         Me.ContextMenuStrip = Me.ContextType
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnConfirm)
