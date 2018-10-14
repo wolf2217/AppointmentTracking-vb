@@ -40,6 +40,8 @@ Partial Class Form1
         Me.txtGetDetails = New MetroFramework.Controls.MetroTextBox()
         Me.btnConfirm = New MetroFramework.Controls.MetroButton()
         Me.btnEdit = New MetroFramework.Controls.MetroButton()
+        Me.btnRestart = New MetroFramework.Controls.MetroButton()
+        Me.lblAppointments = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlDetails.SuspendLayout()
         Me.ContextType.SuspendLayout()
@@ -51,7 +53,7 @@ Partial Class Form1
         '
         'cbDate
         '
-        Me.cbDate.Location = New System.Drawing.Point(14, 18)
+        Me.cbDate.Location = New System.Drawing.Point(14, 53)
         Me.cbDate.MinimumSize = New System.Drawing.Size(0, 29)
         Me.cbDate.Name = "cbDate"
         Me.cbDate.Size = New System.Drawing.Size(275, 29)
@@ -109,7 +111,7 @@ Partial Class Form1
         Me.pnlDetails.HorizontalScrollbarBarColor = True
         Me.pnlDetails.HorizontalScrollbarHighlightOnWheel = False
         Me.pnlDetails.HorizontalScrollbarSize = 10
-        Me.pnlDetails.Location = New System.Drawing.Point(14, 53)
+        Me.pnlDetails.Location = New System.Drawing.Point(14, 88)
         Me.pnlDetails.Name = "pnlDetails"
         Me.pnlDetails.Size = New System.Drawing.Size(476, 165)
         Me.pnlDetails.Style = MetroFramework.MetroColorStyle.Red
@@ -121,7 +123,6 @@ Partial Class Form1
         Me.pnlDetails.VerticalScrollbarBarColor = True
         Me.pnlDetails.VerticalScrollbarHighlightOnWheel = False
         Me.pnlDetails.VerticalScrollbarSize = 10
-        Me.pnlDetails.Visible = False
         '
         'btnAdd
         '
@@ -254,7 +255,7 @@ Partial Class Form1
         Me.txtGetDetails.CustomButton.UseSelectable = True
         Me.txtGetDetails.CustomButton.Visible = False
         Me.txtGetDetails.Lines = New String(-1) {}
-        Me.txtGetDetails.Location = New System.Drawing.Point(14, 234)
+        Me.txtGetDetails.Location = New System.Drawing.Point(14, 269)
         Me.txtGetDetails.MaxLength = 32767
         Me.txtGetDetails.Multiline = True
         Me.txtGetDetails.Name = "txtGetDetails"
@@ -275,7 +276,7 @@ Partial Class Form1
         '
         'btnConfirm
         '
-        Me.btnConfirm.Location = New System.Drawing.Point(316, 355)
+        Me.btnConfirm.Location = New System.Drawing.Point(316, 390)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.Size = New System.Drawing.Size(170, 23)
         Me.btnConfirm.TabIndex = 6
@@ -284,19 +285,42 @@ Partial Class Form1
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(14, 355)
+        Me.btnEdit.Location = New System.Drawing.Point(14, 390)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(133, 23)
         Me.btnEdit.TabIndex = 7
         Me.btnEdit.Text = "Edit this appointment"
         Me.btnEdit.UseSelectable = True
         '
+        'btnRestart
+        '
+        Me.btnRestart.Location = New System.Drawing.Point(295, 53)
+        Me.btnRestart.Name = "btnRestart"
+        Me.btnRestart.Size = New System.Drawing.Size(75, 29)
+        Me.btnRestart.Style = MetroFramework.MetroColorStyle.Red
+        Me.btnRestart.TabIndex = 9
+        Me.btnRestart.Text = "Restart"
+        Me.btnRestart.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnRestart.UseSelectable = True
+        '
+        'lblAppointments
+        '
+        Me.lblAppointments.AutoSize = True
+        Me.lblAppointments.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAppointments.ForeColor = System.Drawing.Color.LightCoral
+        Me.lblAppointments.Location = New System.Drawing.Point(14, 15)
+        Me.lblAppointments.Name = "lblAppointments"
+        Me.lblAppointments.Size = New System.Drawing.Size(0, 18)
+        Me.lblAppointments.TabIndex = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(509, 389)
+        Me.ClientSize = New System.Drawing.Size(505, 423)
         Me.ContextMenuStrip = Me.ContextType
+        Me.Controls.Add(Me.lblAppointments)
+        Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.txtGetDetails)
@@ -313,6 +337,7 @@ Partial Class Form1
         Me.pnlDetails.ResumeLayout(False)
         Me.ContextType.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -333,4 +358,6 @@ Partial Class Form1
     Friend WithEvents DoctorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents JobToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MechanicToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnRestart As MetroFramework.Controls.MetroButton
+    Friend WithEvents lblAppointments As Label
 End Class
