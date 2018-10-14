@@ -13,7 +13,7 @@ Public Class Form1
 
         'Check for current day appointments
         Dim checkAppointment = From AT_Appointments In doAction.AT_Appointments
-                               Where AT_Appointments.AppointmentDate = Date.Today
+                               Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString()
 
         If checkAppointment.Count >= 1 Then
             lblAppointments.Text = "You have " & checkAppointment.Count() & " appointment(s) today"
