@@ -3,7 +3,9 @@ Public Class Form1
     'Reference LINQ2SQL class
     Public doAction As New FunctionsDataContext()
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Height = 264
+        SplitContainer1.Panel1Collapsed = False
+        SplitContainer1.Panel2Collapsed = True
+        'Me.Height = 249
         'set the min date to today
         cbDate.MinDate = Date.Today
         'Add time from Functions => SetTime Module
@@ -16,12 +18,30 @@ Public Class Form1
                                Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString()
 
         If checkAppointment.Count >= 1 Then
+            btnViewAppointments.Visible = True
             lblAppointments.Text = "You have " & checkAppointment.Count() & " appointment(s) today"
         End If
+
+
+        'Loop through all appointments for current day
+        For Each Appointment In doAction.AT_Appointments
+            If Appointment.AppointmentDate = Date.Today.ToLongDateString() Then
+                'Create a new instance of the Appointment card
+                Dim NewCard As New AppointmentCard()
+                'NewCard.lblTime.ForeColor = Color.Lime
+                'NewCard.lblType.ForeColor = Color.Lime
+                'NewCard.lblDetails.ForeColor = Color.Yellow
+                NewCard.lblType.Text = Appointment.AppointmentType
+                NewCard.lblDetails.Text = Appointment.AppointmentDetails
+                NewCard.lblTime.Text = Appointment.AppointmentTime
+                'Add the card(s) to the form
+                FlowLayoutPanel1.Controls.Add(NewCard)
+            End If
+        Next
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Me.Height = 423
+        'Me.Height = 400
         'Read the details of the appointment
         txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
             & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine & vbNewLine _
@@ -31,7 +51,7 @@ Public Class Form1
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         'Cancel the save and go back to edit
         'Adjust form height
-        Me.Height = 264
+        Me.Height = 249
     End Sub
 
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
@@ -72,6 +92,17 @@ Public Class Form1
         'Restart the application once debugged before entring data
         'Application will exit debug mode so data will be saved until you exit application
         Application.Restart()
+    End Sub
+
+    Private Sub btnViewAppointments_Click(sender As Object, e As EventArgs) Handles btnViewAppointments.Click
+        'View Appointments
+        SplitContainer1.Panel1Collapsed = True
+        SplitContainer1.Panel2Collapsed = False
+    End Sub
+
+    Private Sub btnAppointmentEntry_Click(sender As Object, e As EventArgs) Handles btnAppointmentEntry.Click
+        SplitContainer1.Panel1Collapsed = False
+        SplitContainer1.Panel2Collapsed = True
     End Sub
 #End Region
 
