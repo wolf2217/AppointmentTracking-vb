@@ -12,3 +12,8 @@ If you have any issues, just uninstall it and re-install the framework.
 install it from your NuGet Package Manager.
 Tools => NuGet Package Manager => Manage NuGet Packages For Solution
 Under Browse search for MetroModernUI (By Dennis Magno)
+<p align="center">
+<img src="https://image.ibb.co/bVYvrL/AT1.jpg" alt="While creating the appointment" border="0">
+<img src="https://image.ibb.co/dgmtd0/AT2.jpg" alt="Overviewing and saving the appointment" border="0">
+<img src="https://image.ibb.co/hCbtd0/AT3.jpg" alt="Notification of appointment" border="0">
+</p>
