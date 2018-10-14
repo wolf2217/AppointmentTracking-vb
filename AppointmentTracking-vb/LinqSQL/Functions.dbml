@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Appointments" Class="FunctionsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Appointments.mdf;Integrated Security=True" SettingsObjectName="AppointmentTracking_vb.My.MySettings" SettingsPropertyName="AppointmentsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AT_Appointments" Member="AT_Appointments">
+    <Type Name="AT_Appointment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppointmentTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppointmentType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppointmentDetails" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Created" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CreateNewAppointment" Method="CreateNewAppointment">
+    <Parameter Name="AppointmentDate" Parameter="appointmentDate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AppointmentTime" Parameter="appointmentTime" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AppointmentType" Parameter="appointmentType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AppointmentDetails" Parameter="appointmentDetails" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

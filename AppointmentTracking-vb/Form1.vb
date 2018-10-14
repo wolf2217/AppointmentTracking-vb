@@ -1,6 +1,7 @@
 ﻿Imports MetroFramework
 Public Class Form1
-
+    'Reference LINQ2SQL class
+    Public doAction As New FunctionsDataContext()
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = 230
         'set the min date to today
