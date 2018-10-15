@@ -5,7 +5,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SplitContainer1.Panel1Collapsed = False
         SplitContainer1.Panel2Collapsed = True
-        'Me.Height = 249
+
         'set the min date to today
         cbDate.MinDate = Date.Today
         'Add time from Functions => SetTime Module
@@ -15,7 +15,7 @@ Public Class Form1
 
         'Check for current day appointments
         Dim checkAppointment = From AT_Appointments In doAction.AT_Appointments
-                               Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString()
+                               Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString() And AT_Appointments.Status = "Upcoming"
 
         If checkAppointment.Count >= 1 Then
             btnViewAppointments.Visible = True
@@ -23,18 +23,18 @@ Public Class Form1
             lblAppointments.Text = "You have " & checkAppointment.Count() & " appointment(s) today"
         End If
 
-
-        'Loop through all appointments for current day
+        'Loop through and display appointments for current day
         For Each Appointment In doAction.AT_Appointments
-            If Appointment.AppointmentDate = Date.Today.ToLongDateString() Then
+            If Appointment.AppointmentDate = Date.Today.ToLongDateString() _
+                And Appointment.Status = "Upcoming" Then
+
                 'Create a new instance of the Appointment card
                 Dim NewCard As New AppointmentCard()
-                'NewCard.lblTime.ForeColor = Color.Lime
-                'NewCard.lblType.ForeColor = Color.Lime
-                'NewCard.lblDetails.ForeColor = Color.Yellow
+
                 NewCard.lblType.Text = Appointment.AppointmentType
                 NewCard.lblDetails.Text = Appointment.AppointmentDetails
                 NewCard.lblTime.Text = Appointment.AppointmentTime
+                NewCard.lblStatus.Text = Appointment.Status
                 'Add the card(s) to the form
                 FlowLayoutPanel1.Controls.Add(NewCard)
             End If
@@ -42,7 +42,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'Read the details of the appointment
+        'Save the appointment to the database by calling the LinqSQL => Functions =>CreateNewAppointment method
         Try
             doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, "Upcoming")
             txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
@@ -94,9 +94,11 @@ Public Class Form1
 
     Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
         'Open Manage Appointments and view appointments for current day and allow to update status
+        Me.Hide()
         ManageAppointments.Show()
+        Me.Close()
         Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
-                              Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString()
+                              Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString() And AT_Appointments.Status = "Upcoming"
 
 
         If getAppointments.Count >= 1 Then

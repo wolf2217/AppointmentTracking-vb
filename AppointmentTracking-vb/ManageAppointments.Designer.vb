@@ -22,6 +22,7 @@ Partial Class ManageAppointments
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtAppointmentType = New MetroFramework.Controls.MetroTextBox()
         Me.txtAppointmentDetails = New MetroFramework.Controls.MetroTextBox()
         Me.txtDate = New MetroFramework.Controls.MetroTextBox()
@@ -29,6 +30,11 @@ Partial Class ManageAppointments
         Me.txtStatus = New MetroFramework.Controls.MetroTextBox()
         Me.cbTime = New MetroFramework.Controls.MetroComboBox()
         Me.btnUpdate = New MetroFramework.Controls.MetroButton()
+        Me.txtID = New MetroFramework.Controls.MetroTextBox()
+        Me.pnlStatus = New System.Windows.Forms.Panel()
+        Me.lblStatus = New System.Windows.Forms.Label()
+        Me.pnlTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.pnlStatus.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtAppointmentType
@@ -37,7 +43,7 @@ Partial Class ManageAppointments
         '
         '
         Me.txtAppointmentType.CustomButton.Image = Nothing
-        Me.txtAppointmentType.CustomButton.Location = New System.Drawing.Point(469, 1)
+        Me.txtAppointmentType.CustomButton.Location = New System.Drawing.Point(421, 1)
         Me.txtAppointmentType.CustomButton.Name = ""
         Me.txtAppointmentType.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.txtAppointmentType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -46,7 +52,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentType.CustomButton.UseSelectable = True
         Me.txtAppointmentType.CustomButton.Visible = False
         Me.txtAppointmentType.Lines = New String(-1) {}
-        Me.txtAppointmentType.Location = New System.Drawing.Point(23, 88)
+        Me.txtAppointmentType.Location = New System.Drawing.Point(71, 88)
         Me.txtAppointmentType.MaxLength = 32767
         Me.txtAppointmentType.Name = "txtAppointmentType"
         Me.txtAppointmentType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -57,7 +63,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentType.SelectionLength = 0
         Me.txtAppointmentType.SelectionStart = 0
         Me.txtAppointmentType.ShortcutsEnabled = True
-        Me.txtAppointmentType.Size = New System.Drawing.Size(491, 23)
+        Me.txtAppointmentType.Size = New System.Drawing.Size(443, 23)
         Me.txtAppointmentType.Style = MetroFramework.MetroColorStyle.Red
         Me.txtAppointmentType.TabIndex = 0
         Me.txtAppointmentType.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -230,11 +236,73 @@ Partial Class ManageAppointments
         Me.btnUpdate.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnUpdate.UseSelectable = True
         '
+        'txtID
+        '
+        '
+        '
+        '
+        Me.txtID.CustomButton.Image = Nothing
+        Me.txtID.CustomButton.Location = New System.Drawing.Point(20, 1)
+        Me.txtID.CustomButton.Name = ""
+        Me.txtID.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtID.CustomButton.TabIndex = 1
+        Me.txtID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtID.CustomButton.UseSelectable = True
+        Me.txtID.CustomButton.Visible = False
+        Me.txtID.Lines = New String(-1) {}
+        Me.txtID.Location = New System.Drawing.Point(23, 88)
+        Me.txtID.MaxLength = 32767
+        Me.txtID.Name = "txtID"
+        Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtID.PromptText = "ID"
+        Me.txtID.ReadOnly = True
+        Me.txtID.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtID.SelectedText = ""
+        Me.txtID.SelectionLength = 0
+        Me.txtID.SelectionStart = 0
+        Me.txtID.ShortcutsEnabled = True
+        Me.txtID.Size = New System.Drawing.Size(42, 23)
+        Me.txtID.Style = MetroFramework.MetroColorStyle.Red
+        Me.txtID.TabIndex = 7
+        Me.txtID.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtID.UseSelectable = True
+        Me.txtID.WaterMark = "ID"
+        Me.txtID.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtID.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'pnlStatus
+        '
+        Me.pnlStatus.BackColor = System.Drawing.Color.DarkRed
+        Me.pnlStatus.Controls.Add(Me.lblStatus)
+        Me.pnlStatus.ForeColor = System.Drawing.Color.White
+        Me.pnlStatus.Location = New System.Drawing.Point(24, 276)
+        Me.pnlStatus.Name = "pnlStatus"
+        Me.pnlStatus.Size = New System.Drawing.Size(406, 22)
+        Me.pnlStatus.TabIndex = 8
+        Me.pnlStatus.Visible = False
+        '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatus.Location = New System.Drawing.Point(4, 2)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(329, 17)
+        Me.lblStatus.TabIndex = 0
+        Me.lblStatus.Text = "Your appointment status was updated successfully!"
+        '
+        'pnlTimer
+        '
+        Me.pnlTimer.Interval = 3000
+        '
         'ManageAppointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(541, 314)
+        Me.Controls.Add(Me.pnlStatus)
+        Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.cbTime)
         Me.Controls.Add(Me.txtStatus)
@@ -247,6 +315,8 @@ Partial Class ManageAppointments
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Text = "Manage Appointments"
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.pnlStatus.ResumeLayout(False)
+        Me.pnlStatus.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -258,4 +328,8 @@ Partial Class ManageAppointments
     Friend WithEvents txtStatus As MetroFramework.Controls.MetroTextBox
     Friend WithEvents cbTime As MetroFramework.Controls.MetroComboBox
     Friend WithEvents btnUpdate As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtID As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents pnlStatus As Panel
+    Friend WithEvents lblStatus As Label
+    Friend WithEvents pnlTimer As Timer
 End Class
