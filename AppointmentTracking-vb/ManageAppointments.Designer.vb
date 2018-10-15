@@ -46,10 +46,11 @@ Partial Class ManageAppointments
         Me.txtAppointmentType.CustomButton.UseSelectable = True
         Me.txtAppointmentType.CustomButton.Visible = False
         Me.txtAppointmentType.Lines = New String(-1) {}
-        Me.txtAppointmentType.Location = New System.Drawing.Point(23, 113)
+        Me.txtAppointmentType.Location = New System.Drawing.Point(23, 88)
         Me.txtAppointmentType.MaxLength = 32767
         Me.txtAppointmentType.Name = "txtAppointmentType"
         Me.txtAppointmentType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAppointmentType.PromptText = "Appointment Type"
         Me.txtAppointmentType.ReadOnly = True
         Me.txtAppointmentType.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtAppointmentType.SelectedText = ""
@@ -61,6 +62,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentType.TabIndex = 0
         Me.txtAppointmentType.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtAppointmentType.UseSelectable = True
+        Me.txtAppointmentType.WaterMark = "Appointment Type"
         Me.txtAppointmentType.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtAppointmentType.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -79,11 +81,12 @@ Partial Class ManageAppointments
         Me.txtAppointmentDetails.CustomButton.UseSelectable = True
         Me.txtAppointmentDetails.CustomButton.Visible = False
         Me.txtAppointmentDetails.Lines = New String(-1) {}
-        Me.txtAppointmentDetails.Location = New System.Drawing.Point(23, 154)
+        Me.txtAppointmentDetails.Location = New System.Drawing.Point(23, 129)
         Me.txtAppointmentDetails.MaxLength = 32767
         Me.txtAppointmentDetails.Multiline = True
         Me.txtAppointmentDetails.Name = "txtAppointmentDetails"
         Me.txtAppointmentDetails.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAppointmentDetails.PromptText = "Details of your appointment"
         Me.txtAppointmentDetails.ReadOnly = True
         Me.txtAppointmentDetails.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtAppointmentDetails.SelectedText = ""
@@ -95,6 +98,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentDetails.TabIndex = 1
         Me.txtAppointmentDetails.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtAppointmentDetails.UseSelectable = True
+        Me.txtAppointmentDetails.WaterMark = "Details of your appointment"
         Me.txtAppointmentDetails.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtAppointmentDetails.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -113,10 +117,11 @@ Partial Class ManageAppointments
         Me.txtDate.CustomButton.UseSelectable = True
         Me.txtDate.CustomButton.Visible = False
         Me.txtDate.Lines = New String(-1) {}
-        Me.txtDate.Location = New System.Drawing.Point(23, 258)
+        Me.txtDate.Location = New System.Drawing.Point(23, 233)
         Me.txtDate.MaxLength = 32767
         Me.txtDate.Name = "txtDate"
         Me.txtDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtDate.PromptText = "Date of your appointment"
         Me.txtDate.ReadOnly = True
         Me.txtDate.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtDate.SelectedText = ""
@@ -128,6 +133,7 @@ Partial Class ManageAppointments
         Me.txtDate.TabIndex = 2
         Me.txtDate.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtDate.UseSelectable = True
+        Me.txtDate.WaterMark = "Date of your appointment"
         Me.txtDate.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtDate.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -146,10 +152,11 @@ Partial Class ManageAppointments
         Me.txtTime.CustomButton.UseSelectable = True
         Me.txtTime.CustomButton.Visible = False
         Me.txtTime.Lines = New String(-1) {}
-        Me.txtTime.Location = New System.Drawing.Point(210, 258)
+        Me.txtTime.Location = New System.Drawing.Point(210, 233)
         Me.txtTime.MaxLength = 32767
         Me.txtTime.Name = "txtTime"
         Me.txtTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtTime.PromptText = "Time of appointment"
         Me.txtTime.ReadOnly = True
         Me.txtTime.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtTime.SelectedText = ""
@@ -161,6 +168,7 @@ Partial Class ManageAppointments
         Me.txtTime.TabIndex = 3
         Me.txtTime.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtTime.UseSelectable = True
+        Me.txtTime.WaterMark = "Time of appointment"
         Me.txtTime.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtTime.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -179,10 +187,11 @@ Partial Class ManageAppointments
         Me.txtStatus.CustomButton.UseSelectable = True
         Me.txtStatus.CustomButton.Visible = False
         Me.txtStatus.Lines = New String(-1) {}
-        Me.txtStatus.Location = New System.Drawing.Point(336, 258)
+        Me.txtStatus.Location = New System.Drawing.Point(336, 233)
         Me.txtStatus.MaxLength = 32767
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtStatus.PromptText = "Status of appointment"
         Me.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtStatus.SelectedText = ""
         Me.txtStatus.SelectionLength = 0
@@ -193,6 +202,7 @@ Partial Class ManageAppointments
         Me.txtStatus.TabIndex = 4
         Me.txtStatus.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtStatus.UseSelectable = True
+        Me.txtStatus.WaterMark = "Status of appointment"
         Me.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtStatus.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -211,7 +221,7 @@ Partial Class ManageAppointments
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(438, 300)
+        Me.btnUpdate.Location = New System.Drawing.Point(438, 275)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.Style = MetroFramework.MetroColorStyle.Red
@@ -224,7 +234,7 @@ Partial Class ManageAppointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 344)
+        Me.ClientSize = New System.Drawing.Size(541, 314)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.cbTime)
         Me.Controls.Add(Me.txtStatus)

@@ -19,6 +19,7 @@ Public Class Form1
 
         If checkAppointment.Count >= 1 Then
             btnViewAppointments.Visible = True
+            pnlAlert.Visible = True
             lblAppointments.Text = "You have " & checkAppointment.Count() & " appointment(s) today"
         End If
 
@@ -41,28 +42,12 @@ Public Class Form1
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'Me.Height = 400
         'Read the details of the appointment
-        txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
-            & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine & vbNewLine _
-            & "Click confirm below to confirm"
-    End Sub
-
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        'Cancel the save and go back to edit
-        'Adjust form height
-        Me.Height = 249
-    End Sub
-
-    Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
-
         Try
-            'save this appointment to the db
             doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, "Upcoming")
-            txtGetDetails.Text.Replace("Click confirm below to confirm", "")
-            txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "YOUR APPOINTMENT HAS BEEN SAVED!"
+            txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
+                & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine
         Catch ex As Exception
-            'Display error if error occured while saving
             txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "Could not save appointment because " & ex.Message
         End Try
     End Sub
@@ -98,11 +83,13 @@ Public Class Form1
         'View Appointments
         SplitContainer1.Panel1Collapsed = True
         SplitContainer1.Panel2Collapsed = False
+        pnlAlert.Visible = False
     End Sub
 
     Private Sub btnAppointmentEntry_Click(sender As Object, e As EventArgs) Handles btnAppointmentEntry.Click
         SplitContainer1.Panel1Collapsed = False
         SplitContainer1.Panel2Collapsed = True
+        pnlAlert.Visible = True
     End Sub
 
     Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
@@ -119,6 +106,15 @@ Public Class Form1
         End If
 
 
+    End Sub
+
+    Private Sub txtDetails_TextChanged(sender As Object, e As EventArgs) Handles txtDetails.TextChanged
+        'Enable the save button if the details contains content
+        If txtDetails.Text.Count And txtType.Text.Count >= 1 Then
+            btnAdd.Enabled = True
+        Else
+            btnAdd.Enabled = False
+        End If
     End Sub
 #End Region
 
