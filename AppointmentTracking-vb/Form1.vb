@@ -104,6 +104,22 @@ Public Class Form1
         SplitContainer1.Panel1Collapsed = False
         SplitContainer1.Panel2Collapsed = True
     End Sub
+
+    Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
+        'Open Manage Appointments and view appointments for current day and allow to update status
+        ManageAppointments.Show()
+        Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
+                              Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString()
+
+
+        If getAppointments.Count >= 1 Then
+            For Each Appointment In getAppointments
+                ManageAppointments.cbTime.Items.Add(Appointment.AppointmentTime)
+            Next
+        End If
+
+
+    End Sub
 #End Region
 
 End Class
