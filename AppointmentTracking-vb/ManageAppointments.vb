@@ -22,20 +22,13 @@ Public Class ManageAppointments
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         'Update the status
-        Dim getAppointment = From AT_Appointments In doAction.AT_Appointments
-                             Where AT_Appointments.Id = txtID.Text
-                             Select AT_Appointments
-
-        For Each Appointment As AT_Appointment In getAppointment
-            Appointment.Status = txtStatus.Text
-        Next
         Try
-            doAction.SubmitChanges()
+            doAction.UpdateAppointmentStatus(txtID.Text, txtStatus.Text)
             pnlStatus.Visible = True
+            lblStatus.Text = "Appointment was updated successfully"
             pnlTimer.Start()
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
     End Sub
 
@@ -49,5 +42,17 @@ Public Class ManageAppointments
         Form1.Show()
         Me.Close()
         pnlTimer.Stop()
+    End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        'Delete the appointment from the db
+        Try
+            doAction.RemoveAppointment(txtID.Text)
+            pnlStatus.Visible = True
+            lblStatus.Text = "Appointment was removed successfully"
+            pnlTimer.Start()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

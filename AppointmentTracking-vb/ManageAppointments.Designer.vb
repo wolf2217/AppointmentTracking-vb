@@ -34,6 +34,7 @@ Partial Class ManageAppointments
         Me.pnlStatus = New System.Windows.Forms.Panel()
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.pnlTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.btnDelete = New MetroFramework.Controls.MetroButton()
         Me.pnlStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,7 +53,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentType.CustomButton.UseSelectable = True
         Me.txtAppointmentType.CustomButton.Visible = False
         Me.txtAppointmentType.Lines = New String(-1) {}
-        Me.txtAppointmentType.Location = New System.Drawing.Point(71, 88)
+        Me.txtAppointmentType.Location = New System.Drawing.Point(71, 118)
         Me.txtAppointmentType.MaxLength = 32767
         Me.txtAppointmentType.Name = "txtAppointmentType"
         Me.txtAppointmentType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -87,7 +88,7 @@ Partial Class ManageAppointments
         Me.txtAppointmentDetails.CustomButton.UseSelectable = True
         Me.txtAppointmentDetails.CustomButton.Visible = False
         Me.txtAppointmentDetails.Lines = New String(-1) {}
-        Me.txtAppointmentDetails.Location = New System.Drawing.Point(23, 129)
+        Me.txtAppointmentDetails.Location = New System.Drawing.Point(23, 159)
         Me.txtAppointmentDetails.MaxLength = 32767
         Me.txtAppointmentDetails.Multiline = True
         Me.txtAppointmentDetails.Name = "txtAppointmentDetails"
@@ -123,7 +124,7 @@ Partial Class ManageAppointments
         Me.txtDate.CustomButton.UseSelectable = True
         Me.txtDate.CustomButton.Visible = False
         Me.txtDate.Lines = New String(-1) {}
-        Me.txtDate.Location = New System.Drawing.Point(23, 233)
+        Me.txtDate.Location = New System.Drawing.Point(23, 263)
         Me.txtDate.MaxLength = 32767
         Me.txtDate.Name = "txtDate"
         Me.txtDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -158,7 +159,7 @@ Partial Class ManageAppointments
         Me.txtTime.CustomButton.UseSelectable = True
         Me.txtTime.CustomButton.Visible = False
         Me.txtTime.Lines = New String(-1) {}
-        Me.txtTime.Location = New System.Drawing.Point(210, 233)
+        Me.txtTime.Location = New System.Drawing.Point(210, 263)
         Me.txtTime.MaxLength = 32767
         Me.txtTime.Name = "txtTime"
         Me.txtTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -193,7 +194,7 @@ Partial Class ManageAppointments
         Me.txtStatus.CustomButton.UseSelectable = True
         Me.txtStatus.CustomButton.Visible = False
         Me.txtStatus.Lines = New String(-1) {}
-        Me.txtStatus.Location = New System.Drawing.Point(336, 233)
+        Me.txtStatus.Location = New System.Drawing.Point(336, 263)
         Me.txtStatus.MaxLength = 32767
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -227,7 +228,7 @@ Partial Class ManageAppointments
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(438, 275)
+        Me.btnUpdate.Location = New System.Drawing.Point(355, 302)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.Style = MetroFramework.MetroColorStyle.Red
@@ -251,7 +252,7 @@ Partial Class ManageAppointments
         Me.txtID.CustomButton.UseSelectable = True
         Me.txtID.CustomButton.Visible = False
         Me.txtID.Lines = New String(-1) {}
-        Me.txtID.Location = New System.Drawing.Point(23, 88)
+        Me.txtID.Location = New System.Drawing.Point(23, 118)
         Me.txtID.MaxLength = 32767
         Me.txtID.Name = "txtID"
         Me.txtID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -276,31 +277,47 @@ Partial Class ManageAppointments
         Me.pnlStatus.BackColor = System.Drawing.Color.DarkRed
         Me.pnlStatus.Controls.Add(Me.lblStatus)
         Me.pnlStatus.ForeColor = System.Drawing.Color.White
-        Me.pnlStatus.Location = New System.Drawing.Point(24, 276)
+        Me.pnlStatus.Location = New System.Drawing.Point(-2, 72)
         Me.pnlStatus.Name = "pnlStatus"
-        Me.pnlStatus.Size = New System.Drawing.Size(406, 22)
+        Me.pnlStatus.Size = New System.Drawing.Size(545, 22)
         Me.pnlStatus.TabIndex = 8
         Me.pnlStatus.Visible = False
         '
         'lblStatus
         '
-        Me.lblStatus.AutoSize = True
         Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatus.Location = New System.Drawing.Point(4, 2)
+        Me.lblStatus.Location = New System.Drawing.Point(3, 2)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(329, 17)
+        Me.lblStatus.Size = New System.Drawing.Size(539, 17)
         Me.lblStatus.TabIndex = 0
         Me.lblStatus.Text = "Your appointment status was updated successfully!"
+        Me.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'pnlTimer
         '
         Me.pnlTimer.Interval = 3000
         '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Firebrick
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(436, 302)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.Style = MetroFramework.MetroColorStyle.Red
+        Me.btnDelete.TabIndex = 9
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnDelete.UseCustomBackColor = True
+        Me.btnDelete.UseCustomForeColor = True
+        Me.btnDelete.UseSelectable = True
+        '
         'ManageAppointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 314)
+        Me.ClientSize = New System.Drawing.Size(541, 347)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.btnUpdate)
@@ -311,12 +328,12 @@ Partial Class ManageAppointments
         Me.Controls.Add(Me.txtAppointmentDetails)
         Me.Controls.Add(Me.txtAppointmentType)
         Me.Name = "ManageAppointments"
+        Me.Resizable = False
         Me.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow
         Me.Style = MetroFramework.MetroColorStyle.Red
         Me.Text = "Manage Appointments"
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.pnlStatus.ResumeLayout(False)
-        Me.pnlStatus.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -332,4 +349,5 @@ Partial Class ManageAppointments
     Friend WithEvents pnlStatus As Panel
     Friend WithEvents lblStatus As Label
     Friend WithEvents pnlTimer As Timer
+    Friend WithEvents btnDelete As MetroFramework.Controls.MetroButton
 End Class

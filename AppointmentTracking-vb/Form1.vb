@@ -2,6 +2,10 @@
 Public Class Form1
     'Reference LINQ2SQL class
     Public doAction As New FunctionsDataContext()
+    ''' <summary>
+    ''' doAction.Method() calls come from LinqSQL => Functions.dbml file
+    ''' These methods are Stored Procedures which can be found in the Appointments db => Stored Procedures
+    ''' </summary>
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SplitContainer1.Panel1Collapsed = False
         SplitContainer1.Panel2Collapsed = True

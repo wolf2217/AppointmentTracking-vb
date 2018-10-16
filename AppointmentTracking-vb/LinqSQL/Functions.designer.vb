@@ -75,6 +75,18 @@ Partial Public Class FunctionsDataContext
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), appointmentDate, appointmentTime, appointmentType, appointmentDetails, status)
 		Return CType(result.ReturnValue,Integer)
 	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.RemoveAppointment")>  _
+	Public Function RemoveAppointment(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ID", DbType:="Int")> ByVal iD As System.Nullable(Of Integer)) As Integer
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), iD)
+		Return CType(result.ReturnValue,Integer)
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.UpdateAppointmentStatus")>  _
+	Public Function UpdateAppointmentStatus(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ID", DbType:="Int")> ByVal iD As System.Nullable(Of Integer), <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Status", DbType:="NVarChar(50)")> ByVal status As String) As Integer
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), iD, status)
+		Return CType(result.ReturnValue,Integer)
+	End Function
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.AT_Appointments")>  _
