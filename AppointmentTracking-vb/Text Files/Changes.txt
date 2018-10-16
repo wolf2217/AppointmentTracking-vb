@@ -1,0 +1,10 @@
+﻿BELOW IS A LIST OF CHANGES MADE
+
+==========October 16 2018==========
+
+🔃 Replaced the split container with a tab control for easier navigation and more real estats
+❌ Removed the alert notification and view today's appointments button
+✔ Added Today's Appointment(s) notification count to the Today's Appointments tab
+✔ Added the Delete appointment functionality to the ManageAppointments form
+
+====================================

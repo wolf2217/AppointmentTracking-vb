@@ -1,0 +1,31 @@
+﻿BELOW YOU WILL FIND CODE TIPS TO HELP WITH GATHERING DATA FROM THE DATABASE.
+=============================================================================
+1. If you want to get stats such as upcoming appointments, cancelled appointmets, completed etc.
+It is much easier to query these results using Linq.
+Example code to execute a count for all completed appointments
+Right under Public Class {Form_Name} you need to reference the Linq2SQL Class file
+===============================================
+Public doAction As New FunctionsDataContext()
+===============================================
+
+Than whenever you want to call the count from all completed appointments, you would write this query
+=========================================================================
+Dim checkAppointment = From AT_Appointments In doAction.AT_Appointments
+	Where AT_Appointments.Status = "Completed"
+
+	Label.Text = checkAppointment.Count.ToString()
+==========================================================================
+
+2. If you want to add, update or delete records, you can create Stored Procedures.
+If you look in the database => Stored Procedures folder i have 3 Procedures you can look at.
+Once you create a Stored Procedure, you can convert it to a method by adding it to your Linq2SQL class file
+	a) Open Linq2SQL folder => Functions.dbml
+	b) If you don't see your new Stored Procedure in the Procedures folder, refresh the folder than drag
+	and drop the procedure onto the Functions.dbml diagram.
+	You should now see it to the right.
+	c) You can now access this method by referencing the class file (FunctionsDataConext())
+
+================================================
+Public doAction As New FunctionsDataContext()
+doAction.ProcedureName(param1, param2)
+================================================

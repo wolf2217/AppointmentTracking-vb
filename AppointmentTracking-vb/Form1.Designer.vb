@@ -38,20 +38,19 @@ Partial Class Form1
         Me.MechanicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtGetDetails = New MetroFramework.Controls.MetroTextBox()
         Me.btnRestart = New MetroFramework.Controls.MetroButton()
-        Me.lblAppointments = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.btnAppointmentEntry = New MetroFramework.Controls.MetroButton()
         Me.btnManage = New MetroFramework.Controls.MetroButton()
-        Me.btnViewAppointments = New MetroFramework.Controls.MetroButton()
-        Me.pnlAlert = New System.Windows.Forms.FlowLayoutPanel()
+        Me.tabContainer = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextType.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
-        Me.pnlAlert.SuspendLayout()
+        Me.tabContainer.SuspendLayout()
+        Me.MetroTabPage1.SuspendLayout()
+        Me.MetroTabPage2.SuspendLayout()
+        Me.MetroTabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroStyleManager1
@@ -60,10 +59,10 @@ Partial Class Form1
         '
         'cbDate
         '
-        Me.cbDate.Location = New System.Drawing.Point(12, 13)
+        Me.cbDate.Location = New System.Drawing.Point(11, 19)
         Me.cbDate.MinimumSize = New System.Drawing.Size(0, 29)
         Me.cbDate.Name = "cbDate"
-        Me.cbDate.Size = New System.Drawing.Size(275, 29)
+        Me.cbDate.Size = New System.Drawing.Size(190, 29)
         Me.cbDate.Style = MetroFramework.MetroColorStyle.Red
         Me.cbDate.TabIndex = 0
         Me.cbDate.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -72,7 +71,7 @@ Partial Class Form1
         '
         Me.cbHour.FormattingEnabled = True
         Me.cbHour.ItemHeight = 23
-        Me.cbHour.Location = New System.Drawing.Point(296, 13)
+        Me.cbHour.Location = New System.Drawing.Point(207, 19)
         Me.cbHour.Name = "cbHour"
         Me.cbHour.PromptText = "Hour"
         Me.cbHour.Size = New System.Drawing.Size(94, 29)
@@ -85,7 +84,7 @@ Partial Class Form1
         '
         Me.cbMin.FormattingEnabled = True
         Me.cbMin.ItemHeight = 23
-        Me.cbMin.Location = New System.Drawing.Point(397, 13)
+        Me.cbMin.Location = New System.Drawing.Point(307, 19)
         Me.cbMin.Name = "cbMin"
         Me.cbMin.PromptText = "Mins"
         Me.cbMin.Size = New System.Drawing.Size(82, 29)
@@ -98,7 +97,7 @@ Partial Class Form1
         '
         Me.cbAmPm.FormattingEnabled = True
         Me.cbAmPm.ItemHeight = 23
-        Me.cbAmPm.Location = New System.Drawing.Point(486, 13)
+        Me.cbAmPm.Location = New System.Drawing.Point(395, 19)
         Me.cbAmPm.Name = "cbAmPm"
         Me.cbAmPm.PromptText = "AM/PM"
         Me.cbAmPm.Size = New System.Drawing.Size(79, 29)
@@ -110,9 +109,9 @@ Partial Class Form1
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(515, 64)
+        Me.btnAdd.Location = New System.Drawing.Point(11, 200)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(243, 112)
+        Me.btnAdd.Size = New System.Drawing.Size(751, 44)
         Me.btnAdd.Style = MetroFramework.MetroColorStyle.Green
         Me.btnAdd.TabIndex = 6
         Me.btnAdd.Text = "Save Appointment Now"
@@ -125,16 +124,16 @@ Partial Class Form1
         '
         '
         Me.txtDetails.CustomButton.Image = Nothing
-        Me.txtDetails.CustomButton.Location = New System.Drawing.Point(405, 2)
+        Me.txtDetails.CustomButton.Location = New System.Drawing.Point(373, 2)
         Me.txtDetails.CustomButton.Name = ""
-        Me.txtDetails.CustomButton.Size = New System.Drawing.Size(59, 59)
+        Me.txtDetails.CustomButton.Size = New System.Drawing.Size(87, 87)
         Me.txtDetails.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.txtDetails.CustomButton.TabIndex = 1
         Me.txtDetails.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.txtDetails.CustomButton.UseSelectable = True
         Me.txtDetails.CustomButton.Visible = False
         Me.txtDetails.Lines = New String(-1) {}
-        Me.txtDetails.Location = New System.Drawing.Point(13, 112)
+        Me.txtDetails.Location = New System.Drawing.Point(11, 102)
         Me.txtDetails.MaxLength = 32767
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
@@ -145,7 +144,7 @@ Partial Class Form1
         Me.txtDetails.SelectionLength = 0
         Me.txtDetails.SelectionStart = 0
         Me.txtDetails.ShortcutsEnabled = True
-        Me.txtDetails.Size = New System.Drawing.Size(467, 64)
+        Me.txtDetails.Size = New System.Drawing.Size(463, 92)
         Me.txtDetails.Style = MetroFramework.MetroColorStyle.Red
         Me.txtDetails.TabIndex = 5
         Me.txtDetails.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -160,7 +159,7 @@ Partial Class Form1
         '
         '
         Me.txtType.CustomButton.Image = Nothing
-        Me.txtType.CustomButton.Location = New System.Drawing.Point(445, 1)
+        Me.txtType.CustomButton.Location = New System.Drawing.Point(441, 1)
         Me.txtType.CustomButton.Name = ""
         Me.txtType.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.txtType.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -169,7 +168,7 @@ Partial Class Form1
         Me.txtType.CustomButton.UseSelectable = True
         Me.txtType.CustomButton.Visible = False
         Me.txtType.Lines = New String(-1) {}
-        Me.txtType.Location = New System.Drawing.Point(12, 64)
+        Me.txtType.Location = New System.Drawing.Point(11, 73)
         Me.txtType.MaxLength = 32767
         Me.txtType.Name = "txtType"
         Me.txtType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -179,7 +178,7 @@ Partial Class Form1
         Me.txtType.SelectionLength = 0
         Me.txtType.SelectionStart = 0
         Me.txtType.ShortcutsEnabled = True
-        Me.txtType.Size = New System.Drawing.Size(467, 23)
+        Me.txtType.Size = New System.Drawing.Size(463, 23)
         Me.txtType.Style = MetroFramework.MetroColorStyle.Red
         Me.txtType.TabIndex = 4
         Me.txtType.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -230,16 +229,16 @@ Partial Class Form1
         '
         '
         Me.txtGetDetails.CustomButton.Image = Nothing
-        Me.txtGetDetails.CustomButton.Location = New System.Drawing.Point(576, 1)
+        Me.txtGetDetails.CustomButton.Location = New System.Drawing.Point(100, 1)
         Me.txtGetDetails.CustomButton.Name = ""
-        Me.txtGetDetails.CustomButton.Size = New System.Drawing.Size(169, 169)
+        Me.txtGetDetails.CustomButton.Size = New System.Drawing.Size(173, 173)
         Me.txtGetDetails.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.txtGetDetails.CustomButton.TabIndex = 1
         Me.txtGetDetails.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.txtGetDetails.CustomButton.UseSelectable = True
         Me.txtGetDetails.CustomButton.Visible = False
         Me.txtGetDetails.Lines = New String(-1) {}
-        Me.txtGetDetails.Location = New System.Drawing.Point(12, 202)
+        Me.txtGetDetails.Location = New System.Drawing.Point(485, 19)
         Me.txtGetDetails.MaxLength = 32767
         Me.txtGetDetails.Multiline = True
         Me.txtGetDetails.Name = "txtGetDetails"
@@ -250,7 +249,7 @@ Partial Class Form1
         Me.txtGetDetails.SelectionLength = 0
         Me.txtGetDetails.SelectionStart = 0
         Me.txtGetDetails.ShortcutsEnabled = True
-        Me.txtGetDetails.Size = New System.Drawing.Size(746, 171)
+        Me.txtGetDetails.Size = New System.Drawing.Size(274, 175)
         Me.txtGetDetails.Style = MetroFramework.MetroColorStyle.Red
         Me.txtGetDetails.TabIndex = 5
         Me.txtGetDetails.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -260,25 +259,14 @@ Partial Class Form1
         '
         'btnRestart
         '
-        Me.btnRestart.Location = New System.Drawing.Point(683, 13)
+        Me.btnRestart.Location = New System.Drawing.Point(11, 250)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(75, 29)
+        Me.btnRestart.Size = New System.Drawing.Size(751, 25)
         Me.btnRestart.Style = MetroFramework.MetroColorStyle.Red
         Me.btnRestart.TabIndex = 9
         Me.btnRestart.Text = "Restart"
         Me.btnRestart.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnRestart.UseSelectable = True
-        '
-        'lblAppointments
-        '
-        Me.lblAppointments.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblAppointments.AutoSize = True
-        Me.lblAppointments.Font = New System.Drawing.Font("Palatino Linotype", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAppointments.ForeColor = System.Drawing.Color.LightCoral
-        Me.lblAppointments.Location = New System.Drawing.Point(3, 3)
-        Me.lblAppointments.Name = "lblAppointments"
-        Me.lblAppointments.Size = New System.Drawing.Size(0, 26)
-        Me.lblAppointments.TabIndex = 10
         '
         'FlowLayoutPanel1
         '
@@ -286,57 +274,18 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 32)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(5, 41)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(597, 349)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(749, 273)
         Me.FlowLayoutPanel1.TabIndex = 11
-        '
-        'SplitContainer1
-        '
-        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer1.Location = New System.Drawing.Point(8, 33)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.cbDate)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.cbAmPm)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnAdd)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.btnRestart)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.cbHour)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtDetails)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.cbMin)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtGetDetails)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.txtType)
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.AutoScroll = True
-        Me.SplitContainer1.Panel2.Controls.Add(Me.btnAppointmentEntry)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.FlowLayoutPanel1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.btnManage)
-        Me.SplitContainer1.Size = New System.Drawing.Size(770, 384)
-        Me.SplitContainer1.SplitterDistance = 166
-        Me.SplitContainer1.TabIndex = 12
-        '
-        'btnAppointmentEntry
-        '
-        Me.btnAppointmentEntry.Location = New System.Drawing.Point(3, 3)
-        Me.btnAppointmentEntry.Name = "btnAppointmentEntry"
-        Me.btnAppointmentEntry.Size = New System.Drawing.Size(34, 23)
-        Me.btnAppointmentEntry.Style = MetroFramework.MetroColorStyle.Red
-        Me.btnAppointmentEntry.TabIndex = 0
-        Me.btnAppointmentEntry.Text = "<"
-        Me.btnAppointmentEntry.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnAppointmentEntry.UseSelectable = True
         '
         'btnManage
         '
         Me.btnManage.ForeColor = System.Drawing.Color.LightCoral
-        Me.btnManage.Location = New System.Drawing.Point(43, 3)
+        Me.btnManage.Location = New System.Drawing.Point(5, 12)
         Me.btnManage.Name = "btnManage"
         Me.btnManage.Size = New System.Drawing.Size(141, 23)
         Me.btnManage.Style = MetroFramework.MetroColorStyle.Green
@@ -345,38 +294,104 @@ Partial Class Form1
         Me.btnManage.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnManage.UseSelectable = True
         '
-        'btnViewAppointments
+        'tabContainer
         '
-        Me.btnViewAppointments.ForeColor = System.Drawing.Color.LightCoral
-        Me.btnViewAppointments.Location = New System.Drawing.Point(9, 3)
-        Me.btnViewAppointments.Name = "btnViewAppointments"
-        Me.btnViewAppointments.Size = New System.Drawing.Size(171, 23)
-        Me.btnViewAppointments.Style = MetroFramework.MetroColorStyle.Green
-        Me.btnViewAppointments.TabIndex = 13
-        Me.btnViewAppointments.Text = "View Today's Appointments"
-        Me.btnViewAppointments.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnViewAppointments.UseSelectable = True
-        Me.btnViewAppointments.Visible = False
+        Me.tabContainer.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tabContainer.Controls.Add(Me.MetroTabPage1)
+        Me.tabContainer.Controls.Add(Me.MetroTabPage2)
+        Me.tabContainer.Controls.Add(Me.MetroTabPage3)
+        Me.tabContainer.Location = New System.Drawing.Point(8, 33)
+        Me.tabContainer.Name = "tabContainer"
+        Me.tabContainer.SelectedIndex = 0
+        Me.tabContainer.Size = New System.Drawing.Size(770, 359)
+        Me.tabContainer.Style = MetroFramework.MetroColorStyle.Red
+        Me.tabContainer.TabIndex = 15
+        Me.tabContainer.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.tabContainer.UseSelectable = True
         '
-        'pnlAlert
+        'MetroTabPage1
         '
-        Me.pnlAlert.Controls.Add(Me.lblAppointments)
-        Me.pnlAlert.Controls.Add(Me.btnViewAppointments)
-        Me.pnlAlert.Location = New System.Drawing.Point(8, 423)
-        Me.pnlAlert.Name = "pnlAlert"
-        Me.pnlAlert.Size = New System.Drawing.Size(770, 33)
-        Me.pnlAlert.TabIndex = 14
-        Me.pnlAlert.Visible = False
+        Me.MetroTabPage1.Controls.Add(Me.Label1)
+        Me.MetroTabPage1.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.HorizontalScrollbarSize = 10
+        Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage1.Name = "MetroTabPage1"
+        Me.MetroTabPage1.Size = New System.Drawing.Size(762, 317)
+        Me.MetroTabPage1.Style = MetroFramework.MetroColorStyle.Red
+        Me.MetroTabPage1.TabIndex = 0
+        Me.MetroTabPage1.Text = "Dashboard"
+        Me.MetroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroTabPage1.VerticalScrollbarBarColor = True
+        Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'MetroTabPage2
+        '
+        Me.MetroTabPage2.Controls.Add(Me.txtType)
+        Me.MetroTabPage2.Controls.Add(Me.btnRestart)
+        Me.MetroTabPage2.Controls.Add(Me.btnAdd)
+        Me.MetroTabPage2.Controls.Add(Me.cbAmPm)
+        Me.MetroTabPage2.Controls.Add(Me.cbDate)
+        Me.MetroTabPage2.Controls.Add(Me.cbHour)
+        Me.MetroTabPage2.Controls.Add(Me.txtGetDetails)
+        Me.MetroTabPage2.Controls.Add(Me.txtDetails)
+        Me.MetroTabPage2.Controls.Add(Me.cbMin)
+        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Name = "MetroTabPage2"
+        Me.MetroTabPage2.Size = New System.Drawing.Size(762, 317)
+        Me.MetroTabPage2.Style = MetroFramework.MetroColorStyle.Red
+        Me.MetroTabPage2.TabIndex = 1
+        Me.MetroTabPage2.Text = "New Appointment"
+        Me.MetroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroTabPage2.VerticalScrollbarBarColor = True
+        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'MetroTabPage3
+        '
+        Me.MetroTabPage3.Controls.Add(Me.FlowLayoutPanel1)
+        Me.MetroTabPage3.Controls.Add(Me.btnManage)
+        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.HorizontalScrollbarSize = 10
+        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage3.Name = "MetroTabPage3"
+        Me.MetroTabPage3.Size = New System.Drawing.Size(762, 317)
+        Me.MetroTabPage3.Style = MetroFramework.MetroColorStyle.Red
+        Me.MetroTabPage3.TabIndex = 2
+        Me.MetroTabPage3.Text = "Today's Appointments"
+        Me.MetroTabPage3.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroTabPage3.VerticalScrollbarBarColor = True
+        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.VerticalScrollbarSize = 10
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Silver
+        Me.Label1.Location = New System.Drawing.Point(23, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(731, 60)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Nothing Here"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(789, 470)
+        Me.ClientSize = New System.Drawing.Size(789, 405)
         Me.ContextMenuStrip = Me.ContextType
-        Me.Controls.Add(Me.pnlAlert)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.Controls.Add(Me.tabContainer)
         Me.DisplayHeader = False
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Padding = New System.Windows.Forms.Padding(20, 30, 20, 20)
         Me.Resizable = False
@@ -386,12 +401,10 @@ Partial Class Form1
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextType.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
-        Me.pnlAlert.ResumeLayout(False)
-        Me.pnlAlert.PerformLayout()
+        Me.tabContainer.ResumeLayout(False)
+        Me.MetroTabPage1.ResumeLayout(False)
+        Me.MetroTabPage2.ResumeLayout(False)
+        Me.MetroTabPage3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -411,11 +424,11 @@ Partial Class Form1
     Friend WithEvents JobToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MechanicToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnRestart As MetroFramework.Controls.MetroButton
-    Friend WithEvents lblAppointments As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents btnViewAppointments As MetroFramework.Controls.MetroButton
-    Friend WithEvents btnAppointmentEntry As MetroFramework.Controls.MetroButton
     Friend WithEvents btnManage As MetroFramework.Controls.MetroButton
-    Friend WithEvents pnlAlert As FlowLayoutPanel
+    Friend WithEvents tabContainer As MetroFramework.Controls.MetroTabControl
+    Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents Label1 As Label
 End Class

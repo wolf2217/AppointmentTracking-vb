@@ -101,6 +101,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Stats.vb" />
     <Compile Include="Controls\AppointmentCard.Designer.vb">
       <DependentUpon>AppointmentCard.vb</DependentUpon>
     </Compile>
@@ -183,9 +184,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Appointments.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -194,6 +193,8 @@
       <DependentUpon>Appointments.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Text Files\Changes.txt" />
+    <Content Include="Text Files\CodeTips.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

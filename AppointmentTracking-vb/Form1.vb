@@ -2,16 +2,15 @@
 Public Class Form1
     'Reference LINQ2SQL class
     Public doAction As New FunctionsDataContext()
+    Public grabStats As New Stats
     ''' <summary>
     ''' doAction.Method() calls come from LinqSQL => Functions.dbml file
     ''' These methods are Stored Procedures which can be found in the Appointments db => Stored Procedures
     ''' </summary>
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SplitContainer1.Panel1Collapsed = False
-        SplitContainer1.Panel2Collapsed = True
-
         'set the min date to today
         cbDate.MinDate = Date.Today
+
         'Add time from Functions => SetTime Module
         SetTime.setHour()
         SetTime.setMinute()
@@ -22,9 +21,7 @@ Public Class Form1
                                Where AT_Appointments.AppointmentDate = Date.Today.ToLongDateString() And AT_Appointments.Status = "Upcoming"
 
         If checkAppointment.Count >= 1 Then
-            btnViewAppointments.Visible = True
-            pnlAlert.Visible = True
-            lblAppointments.Text = "You have " & checkAppointment.Count() & " appointment(s) today"
+            tabContainer.TabPages(2).Text = "Today's Appointments (" & checkAppointment.Count() & ")"
         End If
 
         'Loop through and display appointments for current day
@@ -76,6 +73,7 @@ Public Class Form1
         'Add Mechanic to appointment type
         txtType.Text = "Mechanic Shop"
     End Sub
+#End Region
 
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         'Restart the application once debugged before entring data
@@ -83,17 +81,9 @@ Public Class Form1
         Application.Restart()
     End Sub
 
-    Private Sub btnViewAppointments_Click(sender As Object, e As EventArgs) Handles btnViewAppointments.Click
+    Private Sub btnViewAppointments_Click(sender As Object, e As EventArgs)
         'View Appointments
-        SplitContainer1.Panel1Collapsed = True
-        SplitContainer1.Panel2Collapsed = False
-        pnlAlert.Visible = False
-    End Sub
-
-    Private Sub btnAppointmentEntry_Click(sender As Object, e As EventArgs) Handles btnAppointmentEntry.Click
-        SplitContainer1.Panel1Collapsed = False
-        SplitContainer1.Panel2Collapsed = True
-        pnlAlert.Visible = True
+        tabContainer.SelectTab(2)
     End Sub
 
     Private Sub btnManage_Click(sender As Object, e As EventArgs) Handles btnManage.Click
@@ -122,6 +112,4 @@ Public Class Form1
             btnAdd.Enabled = False
         End If
     End Sub
-#End Region
-
 End Class
