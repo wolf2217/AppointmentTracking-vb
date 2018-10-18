@@ -60,6 +60,8 @@ Public Class ManageAppointments
         If cbSetStatus.Text = "Postponed" Then
             Overlay.Show()
             NewDate.Show()
+        Else
+            txtStatus.Text = cbSetStatus.Text
         End If
     End Sub
 End Class
