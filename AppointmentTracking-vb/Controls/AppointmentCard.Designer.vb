@@ -68,7 +68,8 @@ Partial Class AppointmentCard
         'lblTime
         '
         Me.lblTime.AutoSize = True
-        Me.lblTime.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.lblTime.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblTime.Font = New System.Drawing.Font("Palatino Linotype", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle))
         Me.lblTime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(174, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.lblTime.Location = New System.Drawing.Point(3, 0)
         Me.lblTime.Name = "lblTime"

@@ -1,4 +1,5 @@
 ﻿BELOW IS A LIST OF CHANGES MADE
+🔃 = Replaced | ❌ = Removed | ✔ = Added
 
 ==========October 16 2018==========
 
@@ -6,5 +7,13 @@
 ❌ Removed the alert notification and view today's appointments button
 ✔ Added Today's Appointment(s) notification count to the Today's Appointments tab
 ✔ Added the Delete appointment functionality to the ManageAppointments form
+
+====================================
+==========October 17 2018==========
+
+✔ View all appointments on the Dashboard tab where the status is not marked as completed 
+✔ Color code - Each status has it's own color to better identify the appointment's statuses
+✔ Appointment time click - allows you to click on a particular appointment time and have the
+Manage Appointment window display with the information for that appointment only
 
 ====================================

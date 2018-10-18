@@ -44,7 +44,8 @@ Partial Class Form1
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAllAppointments = New MetroFramework.Controls.MetroButton()
+        Me.FlowDashboardPanel = New System.Windows.Forms.FlowLayoutPanel()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextType.SuspendLayout()
         Me.tabContainer.SuspendLayout()
@@ -60,7 +61,7 @@ Partial Class Form1
         'cbDate
         '
         Me.cbDate.Location = New System.Drawing.Point(11, 19)
-        Me.cbDate.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.cbDate.MinimumSize = New System.Drawing.Size(4, 29)
         Me.cbDate.Name = "cbDate"
         Me.cbDate.Size = New System.Drawing.Size(190, 29)
         Me.cbDate.Style = MetroFramework.MetroColorStyle.Red
@@ -313,7 +314,8 @@ Partial Class Form1
         '
         'MetroTabPage1
         '
-        Me.MetroTabPage1.Controls.Add(Me.Label1)
+        Me.MetroTabPage1.Controls.Add(Me.FlowDashboardPanel)
+        Me.MetroTabPage1.Controls.Add(Me.btnAllAppointments)
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
         Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.HorizontalScrollbarSize = 10
@@ -371,17 +373,31 @@ Partial Class Form1
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
-        'Label1
+        'btnAllAppointments
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Palatino Linotype", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(23, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(731, 60)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Nothing Here"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnAllAppointments.ForeColor = System.Drawing.Color.LightCoral
+        Me.btnAllAppointments.Location = New System.Drawing.Point(0, 14)
+        Me.btnAllAppointments.Name = "btnAllAppointments"
+        Me.btnAllAppointments.Size = New System.Drawing.Size(141, 23)
+        Me.btnAllAppointments.Style = MetroFramework.MetroColorStyle.Green
+        Me.btnAllAppointments.TabIndex = 15
+        Me.btnAllAppointments.Text = "View All Appointments"
+        Me.btnAllAppointments.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnAllAppointments.UseSelectable = True
+        '
+        'FlowDashboardPanel
+        '
+        Me.FlowDashboardPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlowDashboardPanel.AutoScroll = True
+        Me.FlowDashboardPanel.BackColor = System.Drawing.Color.Transparent
+        Me.FlowDashboardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FlowDashboardPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp
+        Me.FlowDashboardPanel.Location = New System.Drawing.Point(3, 48)
+        Me.FlowDashboardPanel.Name = "FlowDashboardPanel"
+        Me.FlowDashboardPanel.Size = New System.Drawing.Size(756, 273)
+        Me.FlowDashboardPanel.TabIndex = 16
         '
         'Form1
         '
@@ -430,5 +446,6 @@ Partial Class Form1
     Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents Label1 As Label
+    Friend WithEvents btnAllAppointments As MetroFramework.Controls.MetroButton
+    Friend WithEvents FlowDashboardPanel As FlowLayoutPanel
 End Class

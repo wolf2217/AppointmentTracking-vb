@@ -112,4 +112,26 @@ Public Class Form1
             btnAdd.Enabled = False
         End If
     End Sub
+
+    Private Sub btnAllAppointments_Click(sender As Object, e As EventArgs) Handles btnAllAppointments.Click
+
+        'Query all appointments not marked Completed
+        Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
+                              Where Not AT_Appointments.Status = "Completed"
+
+        If getAppointments.Count >= 1 Then
+            FlowDashboardPanel.Controls.Clear()
+            'loop through all active appointments
+            For Each Appointment In doAction.AT_Appointments
+                'Create a new appointment card instance
+                Dim NewCard As New AppointmentCard()
+                NewCard.lblType.Text = Appointment.AppointmentType
+                NewCard.lblDetails.Text = Appointment.AppointmentDetails
+                NewCard.lblTime.Text = Appointment.AppointmentTime
+                NewCard.lblStatus.Text = Appointment.Status
+                'Add the card(s) to the form
+                FlowDashboardPanel.Controls.Add(NewCard)
+            Next
+        End If
+    End Sub
 End Class

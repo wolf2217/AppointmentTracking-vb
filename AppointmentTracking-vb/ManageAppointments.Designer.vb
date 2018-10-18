@@ -27,7 +27,6 @@ Partial Class ManageAppointments
         Me.txtAppointmentDetails = New MetroFramework.Controls.MetroTextBox()
         Me.txtDate = New MetroFramework.Controls.MetroTextBox()
         Me.txtTime = New MetroFramework.Controls.MetroTextBox()
-        Me.txtStatus = New MetroFramework.Controls.MetroTextBox()
         Me.cbTime = New MetroFramework.Controls.MetroComboBox()
         Me.btnUpdate = New MetroFramework.Controls.MetroButton()
         Me.txtID = New MetroFramework.Controls.MetroTextBox()
@@ -35,6 +34,7 @@ Partial Class ManageAppointments
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.pnlTimer = New System.Windows.Forms.Timer(Me.components)
         Me.btnDelete = New MetroFramework.Controls.MetroButton()
+        Me.txtStatus = New MetroFramework.Controls.MetroTextBox()
         Me.pnlStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -179,40 +179,6 @@ Partial Class ManageAppointments
         Me.txtTime.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtTime.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'txtStatus
-        '
-        '
-        '
-        '
-        Me.txtStatus.CustomButton.Image = Nothing
-        Me.txtStatus.CustomButton.Location = New System.Drawing.Point(156, 1)
-        Me.txtStatus.CustomButton.Name = ""
-        Me.txtStatus.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.txtStatus.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.txtStatus.CustomButton.TabIndex = 1
-        Me.txtStatus.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.txtStatus.CustomButton.UseSelectable = True
-        Me.txtStatus.CustomButton.Visible = False
-        Me.txtStatus.Lines = New String(-1) {}
-        Me.txtStatus.Location = New System.Drawing.Point(336, 263)
-        Me.txtStatus.MaxLength = 32767
-        Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtStatus.PromptText = "Status of appointment"
-        Me.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.txtStatus.SelectedText = ""
-        Me.txtStatus.SelectionLength = 0
-        Me.txtStatus.SelectionStart = 0
-        Me.txtStatus.ShortcutsEnabled = True
-        Me.txtStatus.Size = New System.Drawing.Size(178, 23)
-        Me.txtStatus.Style = MetroFramework.MetroColorStyle.Red
-        Me.txtStatus.TabIndex = 4
-        Me.txtStatus.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.txtStatus.UseSelectable = True
-        Me.txtStatus.WaterMark = "Status of appointment"
-        Me.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.txtStatus.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'cbTime
         '
         Me.cbTime.FormattingEnabled = True
@@ -312,6 +278,40 @@ Partial Class ManageAppointments
         Me.btnDelete.UseCustomForeColor = True
         Me.btnDelete.UseSelectable = True
         '
+        'txtStatus
+        '
+        '
+        '
+        '
+        Me.txtStatus.CustomButton.Image = Nothing
+        Me.txtStatus.CustomButton.Location = New System.Drawing.Point(156, 1)
+        Me.txtStatus.CustomButton.Name = ""
+        Me.txtStatus.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtStatus.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtStatus.CustomButton.TabIndex = 1
+        Me.txtStatus.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtStatus.CustomButton.UseSelectable = True
+        Me.txtStatus.CustomButton.Visible = False
+        Me.txtStatus.Lines = New String(-1) {}
+        Me.txtStatus.Location = New System.Drawing.Point(336, 263)
+        Me.txtStatus.MaxLength = 32767
+        Me.txtStatus.Name = "txtStatus"
+        Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtStatus.PromptText = "Status of appointment"
+        Me.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtStatus.SelectedText = ""
+        Me.txtStatus.SelectionLength = 0
+        Me.txtStatus.SelectionStart = 0
+        Me.txtStatus.ShortcutsEnabled = True
+        Me.txtStatus.Size = New System.Drawing.Size(178, 23)
+        Me.txtStatus.Style = MetroFramework.MetroColorStyle.Red
+        Me.txtStatus.TabIndex = 4
+        Me.txtStatus.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtStatus.UseSelectable = True
+        Me.txtStatus.WaterMark = "Status of appointment"
+        Me.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtStatus.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'ManageAppointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,7 +342,6 @@ Partial Class ManageAppointments
     Friend WithEvents txtAppointmentDetails As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtDate As MetroFramework.Controls.MetroTextBox
     Friend WithEvents txtTime As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents txtStatus As MetroFramework.Controls.MetroTextBox
     Friend WithEvents cbTime As MetroFramework.Controls.MetroComboBox
     Friend WithEvents btnUpdate As MetroFramework.Controls.MetroButton
     Friend WithEvents txtID As MetroFramework.Controls.MetroTextBox
@@ -350,4 +349,5 @@ Partial Class ManageAppointments
     Friend WithEvents lblStatus As Label
     Friend WithEvents pnlTimer As Timer
     Friend WithEvents btnDelete As MetroFramework.Controls.MetroButton
+    Friend WithEvents txtStatus As MetroFramework.Controls.MetroTextBox
 End Class
