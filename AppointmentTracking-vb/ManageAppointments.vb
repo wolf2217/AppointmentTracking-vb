@@ -23,7 +23,7 @@ Public Class ManageAppointments
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         'Update the status
         Try
-            doAction.UpdateAppointmentStatus(txtID.Text, txtStatus.Text)
+            doAction.UpdateAppointmentStatus(txtID.Text, txtDate.Text, txtTime.Text, txtStatus.Text)
             pnlStatus.Visible = True
             lblStatus.Text = "Appointment was updated successfully"
             pnlTimer.Start()
@@ -54,5 +54,12 @@ Public Class ManageAppointments
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub txtStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSetStatus.SelectedIndexChanged
+        If cbSetStatus.Text = "Postponed" Then
+            Overlay.Show()
+            NewDate.Show()
+        End If
     End Sub
 End Class

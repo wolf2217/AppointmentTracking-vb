@@ -396,7 +396,7 @@ Partial Class Form1
         Me.FlowDashboardPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp
         Me.FlowDashboardPanel.Location = New System.Drawing.Point(3, 48)
         Me.FlowDashboardPanel.Name = "FlowDashboardPanel"
-        Me.FlowDashboardPanel.Size = New System.Drawing.Size(756, 273)
+        Me.FlowDashboardPanel.Size = New System.Drawing.Size(756, 263)
         Me.FlowDashboardPanel.TabIndex = 16
         '
         'Form1

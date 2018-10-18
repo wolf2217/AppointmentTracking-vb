@@ -143,6 +143,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NewDate.Designer.vb">
+      <DependentUpon>NewDate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewDate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overlay.Designer.vb">
+      <DependentUpon>Overlay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Overlay.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\AppointmentCard.resx">
@@ -159,6 +171,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewDate.resx">
+      <DependentUpon>NewDate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay.resx">
+      <DependentUpon>Overlay.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

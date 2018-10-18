@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ManageAppointments
     Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ManageAppointments
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.txtAppointmentType = New MetroFramework.Controls.MetroTextBox()
@@ -34,6 +34,7 @@ Partial Class ManageAppointments
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.pnlTimer = New System.Windows.Forms.Timer(Me.components)
         Me.btnDelete = New MetroFramework.Controls.MetroButton()
+        Me.cbSetStatus = New MetroFramework.Controls.MetroComboBox()
         Me.txtStatus = New MetroFramework.Controls.MetroTextBox()
         Me.pnlStatus.SuspendLayout()
         Me.SuspendLayout()
@@ -278,13 +279,27 @@ Partial Class ManageAppointments
         Me.btnDelete.UseCustomForeColor = True
         Me.btnDelete.UseSelectable = True
         '
+        'cbSetStatus
+        '
+        Me.cbSetStatus.FormattingEnabled = True
+        Me.cbSetStatus.ItemHeight = 23
+        Me.cbSetStatus.Items.AddRange(New Object() {"Postponed", "Cancelled"})
+        Me.cbSetStatus.Location = New System.Drawing.Point(23, 299)
+        Me.cbSetStatus.Name = "cbSetStatus"
+        Me.cbSetStatus.PromptText = "Change Status"
+        Me.cbSetStatus.Size = New System.Drawing.Size(326, 29)
+        Me.cbSetStatus.Style = MetroFramework.MetroColorStyle.Red
+        Me.cbSetStatus.TabIndex = 10
+        Me.cbSetStatus.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.cbSetStatus.UseSelectable = True
+        '
         'txtStatus
         '
         '
         '
         '
         Me.txtStatus.CustomButton.Image = Nothing
-        Me.txtStatus.CustomButton.Location = New System.Drawing.Point(156, 1)
+        Me.txtStatus.CustomButton.Location = New System.Drawing.Point(153, 1)
         Me.txtStatus.CustomButton.Name = ""
         Me.txtStatus.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.txtStatus.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -297,18 +312,19 @@ Partial Class ManageAppointments
         Me.txtStatus.MaxLength = 32767
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtStatus.PromptText = "Status of appointment"
+        Me.txtStatus.PromptText = "Status"
+        Me.txtStatus.ReadOnly = True
         Me.txtStatus.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.txtStatus.SelectedText = ""
         Me.txtStatus.SelectionLength = 0
         Me.txtStatus.SelectionStart = 0
         Me.txtStatus.ShortcutsEnabled = True
-        Me.txtStatus.Size = New System.Drawing.Size(178, 23)
+        Me.txtStatus.Size = New System.Drawing.Size(175, 23)
         Me.txtStatus.Style = MetroFramework.MetroColorStyle.Red
-        Me.txtStatus.TabIndex = 4
+        Me.txtStatus.TabIndex = 11
         Me.txtStatus.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtStatus.UseSelectable = True
-        Me.txtStatus.WaterMark = "Status of appointment"
+        Me.txtStatus.WaterMark = "Status"
         Me.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtStatus.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -317,12 +333,13 @@ Partial Class ManageAppointments
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(541, 347)
+        Me.Controls.Add(Me.txtStatus)
+        Me.Controls.Add(Me.cbSetStatus)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.pnlStatus)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.cbTime)
-        Me.Controls.Add(Me.txtStatus)
         Me.Controls.Add(Me.txtTime)
         Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.txtAppointmentDetails)
@@ -349,5 +366,6 @@ Partial Class ManageAppointments
     Friend WithEvents lblStatus As Label
     Friend WithEvents pnlTimer As Timer
     Friend WithEvents btnDelete As MetroFramework.Controls.MetroButton
+    Friend WithEvents cbSetStatus As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtStatus As MetroFramework.Controls.MetroTextBox
 End Class

@@ -17,3 +17,22 @@
 Manage Appointment window display with the information for that appointment only
 
 ====================================
+
+==========October 18 2018==========
+
+✔ Status change dropdown list to make it a bit easier to update the status 
+✔ Postponed date - A New Date form will display if you change the status to "Postponed".
+This will allow you to change the appointment date and time to the new date and time.
+🔃 Updated the UpdateAppointment Stored Procedure to allow setting the appointment date and time.
+✔ New Overlay form has been created.
+The overlay is black and is 80% transparent with no border and is set to be maximized.
+Do Not set the TopMost property to True on the Overlay window.
+When you want to call another form to display, ensure that you set that form's TopMost property to True
+
+Overlay.Show()
+NewForm.Show()
+
+Create a {FormName} Closing event and add Overlay.Close() to it.
+This will close the Overlay form when the {FormName} is being closed.
+
+====================================
