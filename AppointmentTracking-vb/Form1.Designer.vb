@@ -42,10 +42,11 @@ Partial Class Form1
         Me.btnManage = New MetroFramework.Controls.MetroButton()
         Me.tabContainer = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.FlowDashboardPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.btnAllAppointments = New MetroFramework.Controls.MetroButton()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.btnAllAppointments = New MetroFramework.Controls.MetroButton()
-        Me.FlowDashboardPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.txtLocation = New MetroFramework.Controls.MetroTextBox()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextType.SuspendLayout()
         Me.tabContainer.SuspendLayout()
@@ -61,7 +62,7 @@ Partial Class Form1
         'cbDate
         '
         Me.cbDate.Location = New System.Drawing.Point(11, 19)
-        Me.cbDate.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.cbDate.MinimumSize = New System.Drawing.Size(0, 29)
         Me.cbDate.Name = "cbDate"
         Me.cbDate.Size = New System.Drawing.Size(190, 29)
         Me.cbDate.Style = MetroFramework.MetroColorStyle.Red
@@ -110,11 +111,11 @@ Partial Class Form1
         'btnAdd
         '
         Me.btnAdd.Enabled = False
-        Me.btnAdd.Location = New System.Drawing.Point(11, 200)
+        Me.btnAdd.Location = New System.Drawing.Point(284, 212)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(751, 44)
+        Me.btnAdd.Size = New System.Drawing.Size(190, 44)
         Me.btnAdd.Style = MetroFramework.MetroColorStyle.Green
-        Me.btnAdd.TabIndex = 6
+        Me.btnAdd.TabIndex = 7
         Me.btnAdd.Text = "Save Appointment Now"
         Me.btnAdd.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.btnAdd.UseSelectable = True
@@ -134,7 +135,7 @@ Partial Class Form1
         Me.txtDetails.CustomButton.UseSelectable = True
         Me.txtDetails.CustomButton.Visible = False
         Me.txtDetails.Lines = New String(-1) {}
-        Me.txtDetails.Location = New System.Drawing.Point(11, 102)
+        Me.txtDetails.Location = New System.Drawing.Point(11, 85)
         Me.txtDetails.MaxLength = 32767
         Me.txtDetails.Multiline = True
         Me.txtDetails.Name = "txtDetails"
@@ -169,7 +170,7 @@ Partial Class Form1
         Me.txtType.CustomButton.UseSelectable = True
         Me.txtType.CustomButton.Visible = False
         Me.txtType.Lines = New String(-1) {}
-        Me.txtType.Location = New System.Drawing.Point(11, 73)
+        Me.txtType.Location = New System.Drawing.Point(11, 56)
         Me.txtType.MaxLength = 32767
         Me.txtType.Name = "txtType"
         Me.txtType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -230,9 +231,9 @@ Partial Class Form1
         '
         '
         Me.txtGetDetails.CustomButton.Image = Nothing
-        Me.txtGetDetails.CustomButton.Location = New System.Drawing.Point(100, 1)
+        Me.txtGetDetails.CustomButton.Location = New System.Drawing.Point(88, 1)
         Me.txtGetDetails.CustomButton.Name = ""
-        Me.txtGetDetails.CustomButton.Size = New System.Drawing.Size(173, 173)
+        Me.txtGetDetails.CustomButton.Size = New System.Drawing.Size(185, 185)
         Me.txtGetDetails.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.txtGetDetails.CustomButton.TabIndex = 1
         Me.txtGetDetails.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -250,9 +251,9 @@ Partial Class Form1
         Me.txtGetDetails.SelectionLength = 0
         Me.txtGetDetails.SelectionStart = 0
         Me.txtGetDetails.ShortcutsEnabled = True
-        Me.txtGetDetails.Size = New System.Drawing.Size(274, 175)
+        Me.txtGetDetails.Size = New System.Drawing.Size(274, 187)
         Me.txtGetDetails.Style = MetroFramework.MetroColorStyle.Red
-        Me.txtGetDetails.TabIndex = 5
+        Me.txtGetDetails.TabIndex = 8
         Me.txtGetDetails.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.txtGetDetails.UseSelectable = True
         Me.txtGetDetails.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
@@ -260,9 +261,9 @@ Partial Class Form1
         '
         'btnRestart
         '
-        Me.btnRestart.Location = New System.Drawing.Point(11, 250)
+        Me.btnRestart.Location = New System.Drawing.Point(677, 212)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(751, 25)
+        Me.btnRestart.Size = New System.Drawing.Size(82, 25)
         Me.btnRestart.Style = MetroFramework.MetroColorStyle.Red
         Me.btnRestart.TabIndex = 9
         Me.btnRestart.Text = "Restart"
@@ -305,7 +306,7 @@ Partial Class Form1
         Me.tabContainer.Controls.Add(Me.MetroTabPage3)
         Me.tabContainer.Location = New System.Drawing.Point(8, 33)
         Me.tabContainer.Name = "tabContainer"
-        Me.tabContainer.SelectedIndex = 0
+        Me.tabContainer.SelectedIndex = 1
         Me.tabContainer.Size = New System.Drawing.Size(770, 359)
         Me.tabContainer.Style = MetroFramework.MetroColorStyle.Red
         Me.tabContainer.TabIndex = 15
@@ -330,8 +331,35 @@ Partial Class Form1
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
         '
+        'FlowDashboardPanel
+        '
+        Me.FlowDashboardPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FlowDashboardPanel.AutoScroll = True
+        Me.FlowDashboardPanel.BackColor = System.Drawing.Color.Transparent
+        Me.FlowDashboardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FlowDashboardPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp
+        Me.FlowDashboardPanel.Location = New System.Drawing.Point(3, 48)
+        Me.FlowDashboardPanel.Name = "FlowDashboardPanel"
+        Me.FlowDashboardPanel.Size = New System.Drawing.Size(756, 263)
+        Me.FlowDashboardPanel.TabIndex = 16
+        '
+        'btnAllAppointments
+        '
+        Me.btnAllAppointments.ForeColor = System.Drawing.Color.LightCoral
+        Me.btnAllAppointments.Location = New System.Drawing.Point(0, 14)
+        Me.btnAllAppointments.Name = "btnAllAppointments"
+        Me.btnAllAppointments.Size = New System.Drawing.Size(141, 23)
+        Me.btnAllAppointments.Style = MetroFramework.MetroColorStyle.Green
+        Me.btnAllAppointments.TabIndex = 15
+        Me.btnAllAppointments.Text = "View All Appointments"
+        Me.btnAllAppointments.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.btnAllAppointments.UseSelectable = True
+        '
         'MetroTabPage2
         '
+        Me.MetroTabPage2.Controls.Add(Me.txtLocation)
         Me.MetroTabPage2.Controls.Add(Me.txtType)
         Me.MetroTabPage2.Controls.Add(Me.btnRestart)
         Me.MetroTabPage2.Controls.Add(Me.btnAdd)
@@ -373,31 +401,39 @@ Partial Class Form1
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
-        'btnAllAppointments
+        'txtLocation
         '
-        Me.btnAllAppointments.ForeColor = System.Drawing.Color.LightCoral
-        Me.btnAllAppointments.Location = New System.Drawing.Point(0, 14)
-        Me.btnAllAppointments.Name = "btnAllAppointments"
-        Me.btnAllAppointments.Size = New System.Drawing.Size(141, 23)
-        Me.btnAllAppointments.Style = MetroFramework.MetroColorStyle.Green
-        Me.btnAllAppointments.TabIndex = 15
-        Me.btnAllAppointments.Text = "View All Appointments"
-        Me.btnAllAppointments.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.btnAllAppointments.UseSelectable = True
         '
-        'FlowDashboardPanel
         '
-        Me.FlowDashboardPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FlowDashboardPanel.AutoScroll = True
-        Me.FlowDashboardPanel.BackColor = System.Drawing.Color.Transparent
-        Me.FlowDashboardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowDashboardPanel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp
-        Me.FlowDashboardPanel.Location = New System.Drawing.Point(3, 48)
-        Me.FlowDashboardPanel.Name = "FlowDashboardPanel"
-        Me.FlowDashboardPanel.Size = New System.Drawing.Size(756, 263)
-        Me.FlowDashboardPanel.TabIndex = 16
+        '
+        Me.txtLocation.CustomButton.Image = Nothing
+        Me.txtLocation.CustomButton.Location = New System.Drawing.Point(441, 1)
+        Me.txtLocation.CustomButton.Name = ""
+        Me.txtLocation.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtLocation.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtLocation.CustomButton.TabIndex = 1
+        Me.txtLocation.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtLocation.CustomButton.UseSelectable = True
+        Me.txtLocation.CustomButton.Visible = False
+        Me.txtLocation.Lines = New String(-1) {}
+        Me.txtLocation.Location = New System.Drawing.Point(11, 183)
+        Me.txtLocation.MaxLength = 32767
+        Me.txtLocation.Name = "txtLocation"
+        Me.txtLocation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtLocation.PromptText = "Location"
+        Me.txtLocation.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtLocation.SelectedText = ""
+        Me.txtLocation.SelectionLength = 0
+        Me.txtLocation.SelectionStart = 0
+        Me.txtLocation.ShortcutsEnabled = True
+        Me.txtLocation.Size = New System.Drawing.Size(463, 23)
+        Me.txtLocation.Style = MetroFramework.MetroColorStyle.Red
+        Me.txtLocation.TabIndex = 6
+        Me.txtLocation.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtLocation.UseSelectable = True
+        Me.txtLocation.WaterMark = "Location"
+        Me.txtLocation.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtLocation.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Form1
         '
@@ -448,4 +484,5 @@ Partial Class Form1
     Friend WithEvents MetroTabPage3 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents btnAllAppointments As MetroFramework.Controls.MetroButton
     Friend WithEvents FlowDashboardPanel As FlowLayoutPanel
+    Friend WithEvents txtLocation As MetroFramework.Controls.MetroTextBox
 End Class

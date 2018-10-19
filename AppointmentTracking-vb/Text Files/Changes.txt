@@ -36,3 +36,11 @@ Create a {FormName} Closing event and add Overlay.Close() to it.
 This will close the Overlay form when the {FormName} is being closed.
 
 ====================================
+
+==========October 19 2018==========
+
+✔ Location field on New Appointment 
+✔ Appointment Date on Appointment card
+🔃 Appointment card text colors and label placements
+
+====================================

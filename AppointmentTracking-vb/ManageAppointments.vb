@@ -11,6 +11,7 @@ Public Class ManageAppointments
             For Each appointment In AppointmentDetails
                 txtID.Text = appointment.Id
                 txtAppointmentDetails.Text = appointment.AppointmentDetails
+                txtLocation.Text = appointment.location
                 txtAppointmentType.Text = appointment.AppointmentType
                 txtDate.Text = appointment.AppointmentDate
                 txtStatus.Text = appointment.Status

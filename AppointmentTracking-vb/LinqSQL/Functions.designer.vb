@@ -70,12 +70,6 @@ Partial Public Class FunctionsDataContext
 		End Get
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.CreateNewAppointment")>  _
-	Public Function CreateNewAppointment(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentDate", DbType:="NVarChar(50)")> ByVal appointmentDate As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentTime", DbType:="NVarChar(50)")> ByVal appointmentTime As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentType", DbType:="NVarChar(50)")> ByVal appointmentType As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentDetails", DbType:="NVarChar(MAX)")> ByVal appointmentDetails As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Status", DbType:="NVarChar(50)")> ByVal status As String) As Integer
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), appointmentDate, appointmentTime, appointmentType, appointmentDetails, status)
-		Return CType(result.ReturnValue,Integer)
-	End Function
-	
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.RemoveAppointment")>  _
 	Public Function RemoveAppointment(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ID", DbType:="Int")> ByVal iD As System.Nullable(Of Integer)) As Integer
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), iD)
@@ -85,6 +79,12 @@ Partial Public Class FunctionsDataContext
 	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.UpdateAppointmentStatus")>  _
 	Public Function UpdateAppointmentStatus(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="ID", DbType:="Int")> ByVal iD As System.Nullable(Of Integer), <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentDate", DbType:="NVarChar(50)")> ByVal appointmentDate As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentTime", DbType:="NVarChar(50)")> ByVal appointmentTime As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Status", DbType:="NVarChar(50)")> ByVal status As String) As Integer
 		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), iD, appointmentDate, appointmentTime, status)
+		Return CType(result.ReturnValue,Integer)
+	End Function
+	
+	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.CreateNewAppointment")>  _
+	Public Function CreateNewAppointment(<Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentDate", DbType:="NVarChar(50)")> ByVal appointmentDate As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentTime", DbType:="NVarChar(50)")> ByVal appointmentTime As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentType", DbType:="NVarChar(50)")> ByVal appointmentType As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="AppointmentDetails", DbType:="NVarChar(MAX)")> ByVal appointmentDetails As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Location", DbType:="NVarChar(100)")> ByVal location As String, <Global.System.Data.Linq.Mapping.ParameterAttribute(Name:="Status", DbType:="NVarChar(50)")> ByVal status As String) As Integer
+		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo), appointmentDate, appointmentTime, appointmentType, appointmentDetails, location, status)
 		Return CType(result.ReturnValue,Integer)
 	End Function
 End Class
@@ -104,6 +104,8 @@ Partial Public Class AT_Appointment
 	Private _AppointmentType As String
 	
 	Private _AppointmentDetails As String
+	
+	Private _location As String
 	
 	Private _Status As String
 	
@@ -135,6 +137,10 @@ Partial Public Class AT_Appointment
     Partial Private Sub OnAppointmentDetailsChanging(value As String)
     End Sub
     Partial Private Sub OnAppointmentDetailsChanged()
+    End Sub
+    Partial Private Sub OnlocationChanging(value As String)
+    End Sub
+    Partial Private Sub OnlocationChanged()
     End Sub
     Partial Private Sub OnStatusChanging(value As String)
     End Sub
@@ -228,6 +234,22 @@ Partial Public Class AT_Appointment
 				Me._AppointmentDetails = value
 				Me.SendPropertyChanged("AppointmentDetails")
 				Me.OnAppointmentDetailsChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_location", DbType:="NVarChar(100)")>  _
+	Public Property location() As String
+		Get
+			Return Me._location
+		End Get
+		Set
+			If (String.Equals(Me._location, value) = false) Then
+				Me.OnlocationChanging(value)
+				Me.SendPropertyChanging
+				Me._location = value
+				Me.SendPropertyChanged("location")
+				Me.OnlocationChanged
 			End If
 		End Set
 	End Property

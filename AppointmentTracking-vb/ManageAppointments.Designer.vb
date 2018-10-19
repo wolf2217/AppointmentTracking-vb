@@ -36,6 +36,7 @@ Partial Class ManageAppointments
         Me.btnDelete = New MetroFramework.Controls.MetroButton()
         Me.cbSetStatus = New MetroFramework.Controls.MetroComboBox()
         Me.txtStatus = New MetroFramework.Controls.MetroTextBox()
+        Me.txtLocation = New MetroFramework.Controls.MetroTextBox()
         Me.pnlStatus.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -125,7 +126,7 @@ Partial Class ManageAppointments
         Me.txtDate.CustomButton.UseSelectable = True
         Me.txtDate.CustomButton.Visible = False
         Me.txtDate.Lines = New String(-1) {}
-        Me.txtDate.Location = New System.Drawing.Point(23, 263)
+        Me.txtDate.Location = New System.Drawing.Point(25, 284)
         Me.txtDate.MaxLength = 32767
         Me.txtDate.Name = "txtDate"
         Me.txtDate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -160,7 +161,7 @@ Partial Class ManageAppointments
         Me.txtTime.CustomButton.UseSelectable = True
         Me.txtTime.CustomButton.Visible = False
         Me.txtTime.Lines = New String(-1) {}
-        Me.txtTime.Location = New System.Drawing.Point(210, 263)
+        Me.txtTime.Location = New System.Drawing.Point(212, 284)
         Me.txtTime.MaxLength = 32767
         Me.txtTime.Name = "txtTime"
         Me.txtTime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -195,7 +196,7 @@ Partial Class ManageAppointments
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(355, 302)
+        Me.btnUpdate.Location = New System.Drawing.Point(357, 323)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.Style = MetroFramework.MetroColorStyle.Red
@@ -268,7 +269,7 @@ Partial Class ManageAppointments
         '
         Me.btnDelete.BackColor = System.Drawing.Color.Firebrick
         Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(436, 302)
+        Me.btnDelete.Location = New System.Drawing.Point(438, 323)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.Style = MetroFramework.MetroColorStyle.Red
@@ -284,7 +285,7 @@ Partial Class ManageAppointments
         Me.cbSetStatus.FormattingEnabled = True
         Me.cbSetStatus.ItemHeight = 23
         Me.cbSetStatus.Items.AddRange(New Object() {"Postponed", "Cancelled"})
-        Me.cbSetStatus.Location = New System.Drawing.Point(23, 299)
+        Me.cbSetStatus.Location = New System.Drawing.Point(25, 320)
         Me.cbSetStatus.Name = "cbSetStatus"
         Me.cbSetStatus.PromptText = "Change Status"
         Me.cbSetStatus.Size = New System.Drawing.Size(326, 29)
@@ -308,7 +309,7 @@ Partial Class ManageAppointments
         Me.txtStatus.CustomButton.UseSelectable = True
         Me.txtStatus.CustomButton.Visible = False
         Me.txtStatus.Lines = New String(-1) {}
-        Me.txtStatus.Location = New System.Drawing.Point(336, 263)
+        Me.txtStatus.Location = New System.Drawing.Point(338, 284)
         Me.txtStatus.MaxLength = 32767
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -328,11 +329,47 @@ Partial Class ManageAppointments
         Me.txtStatus.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.txtStatus.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'txtLocation
+        '
+        '
+        '
+        '
+        Me.txtLocation.CustomButton.Image = Nothing
+        Me.txtLocation.CustomButton.Location = New System.Drawing.Point(412, 1)
+        Me.txtLocation.CustomButton.Name = ""
+        Me.txtLocation.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.txtLocation.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txtLocation.CustomButton.TabIndex = 1
+        Me.txtLocation.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txtLocation.CustomButton.UseSelectable = True
+        Me.txtLocation.CustomButton.Visible = False
+        Me.txtLocation.Lines = New String(-1) {}
+        Me.txtLocation.Location = New System.Drawing.Point(23, 254)
+        Me.txtLocation.MaxLength = 32767
+        Me.txtLocation.Name = "txtLocation"
+        Me.txtLocation.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtLocation.PromptText = "Location"
+        Me.txtLocation.ReadOnly = True
+        Me.txtLocation.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtLocation.SelectedText = ""
+        Me.txtLocation.SelectionLength = 0
+        Me.txtLocation.SelectionStart = 0
+        Me.txtLocation.ShortcutsEnabled = True
+        Me.txtLocation.Size = New System.Drawing.Size(490, 23)
+        Me.txtLocation.Style = MetroFramework.MetroColorStyle.Red
+        Me.txtLocation.TabIndex = 12
+        Me.txtLocation.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.txtLocation.UseSelectable = True
+        Me.txtLocation.WaterMark = "Location"
+        Me.txtLocation.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txtLocation.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'ManageAppointments
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 347)
+        Me.ClientSize = New System.Drawing.Size(541, 378)
+        Me.Controls.Add(Me.txtLocation)
         Me.Controls.Add(Me.txtStatus)
         Me.Controls.Add(Me.cbSetStatus)
         Me.Controls.Add(Me.btnDelete)
@@ -368,4 +405,5 @@ Partial Class ManageAppointments
     Friend WithEvents btnDelete As MetroFramework.Controls.MetroButton
     Friend WithEvents cbSetStatus As MetroFramework.Controls.MetroComboBox
     Friend WithEvents txtStatus As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents txtLocation As MetroFramework.Controls.MetroTextBox
 End Class

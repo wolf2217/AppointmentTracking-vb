@@ -45,7 +45,7 @@ Public Class Form1
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Save the appointment to the database by calling the LinqSQL => Functions =>CreateNewAppointment method
         Try
-            doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, "Upcoming")
+            doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, txtLocation.Text, "Upcoming")
             txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
                 & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine
         Catch ex As Exception
@@ -127,6 +127,7 @@ Public Class Form1
                 Dim NewCard As New AppointmentCard()
                 NewCard.lblType.Text = Appointment.AppointmentType
                 NewCard.lblDetails.Text = Appointment.AppointmentDetails
+                NewCard.lblDate.Text = Appointment.AppointmentDate
                 NewCard.lblTime.Text = Appointment.AppointmentTime
                 NewCard.lblStatus.Text = Appointment.Status
                 'Add the card(s) to the form
