@@ -44,3 +44,19 @@ This will close the Overlay form when the {FormName} is being closed.
 🔃 Appointment card text colors and label placements
 
 ====================================
+
+==========October 20 2018==========
+
+🔃 Update date field for the New Date form which now display's the date of the appointment
+that is being postponed.
+
+2 functions have been added on Form1 and are stored in the Region "Functions"
+
+getAllAppointments()
+
+getTodaysAppointments()
+
+This is so if you want to get all appointments by a different control or elsewhere, you just have
+to call that getAllAppointments function.
+
+====================================

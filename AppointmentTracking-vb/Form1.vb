@@ -7,6 +7,53 @@ Public Class Form1
     ''' doAction.Method() calls come from LinqSQL => Functions.dbml file
     ''' These methods are Stored Procedures which can be found in the Appointments db => Stored Procedures
     ''' </summary>
+    ''' 
+#Region "Functions"
+    Private Function getAllAppointments()
+        'Query all appointments not marked Completed
+        Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
+                              Where Not AT_Appointments.Status = "Completed"
+
+        If getAppointments.Count >= 1 Then
+            FlowDashboardPanel.Controls.Clear()
+            'loop through all active appointments
+            For Each Appointment In doAction.AT_Appointments
+                'Create a new appointment card instance
+                Dim NewCard As New AppointmentCard()
+                NewCard.lblType.Text = Appointment.AppointmentType
+                NewCard.lblDetails.Text = Appointment.AppointmentDetails
+                NewCard.lblDate.Text = Appointment.AppointmentDate
+                NewCard.lblTime.Text = Appointment.AppointmentTime
+                NewCard.lblStatus.Text = Appointment.Status
+                'Add the card(s) to the form
+                FlowDashboardPanel.Controls.Add(NewCard)
+            Next
+        End If
+        Return 0
+    End Function
+
+    Private Function getTodaysAppointments()
+        'Loop through and display appointments for current day
+        For Each Appointment In doAction.AT_Appointments
+            If Appointment.AppointmentDate = Date.Today.ToLongDateString() _
+                And Appointment.Status = "Upcoming" Then
+
+                'Create a new instance of the Appointment card
+                Dim NewCard As New AppointmentCard()
+
+                NewCard.lblType.Text = Appointment.AppointmentType
+                NewCard.lblDetails.Text = Appointment.AppointmentDetails
+                NewCard.lblTime.Text = Appointment.AppointmentTime
+                NewCard.lblDate.Text = Appointment.AppointmentDate
+                NewCard.lblStatus.Text = Appointment.Status
+                'Add the card(s) to the form
+                FlowLayoutPanel1.Controls.Add(NewCard)
+            End If
+        Next
+        Return 0
+    End Function
+#End Region
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'set the min date to today
         cbDate.MinDate = Date.Today
@@ -24,22 +71,8 @@ Public Class Form1
             tabContainer.TabPages(2).Text = "Today's Appointments (" & checkAppointment.Count() & ")"
         End If
 
-        'Loop through and display appointments for current day
-        For Each Appointment In doAction.AT_Appointments
-            If Appointment.AppointmentDate = Date.Today.ToLongDateString() _
-                And Appointment.Status = "Upcoming" Then
+        getTodaysAppointments()
 
-                'Create a new instance of the Appointment card
-                Dim NewCard As New AppointmentCard()
-
-                NewCard.lblType.Text = Appointment.AppointmentType
-                NewCard.lblDetails.Text = Appointment.AppointmentDetails
-                NewCard.lblTime.Text = Appointment.AppointmentTime
-                NewCard.lblStatus.Text = Appointment.Status
-                'Add the card(s) to the form
-                FlowLayoutPanel1.Controls.Add(NewCard)
-            End If
-        Next
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -48,6 +81,7 @@ Public Class Form1
             doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, txtLocation.Text, "Upcoming")
             txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
                 & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine
+            btnAllAppointments.PerformClick()
         Catch ex As Exception
             txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "Could not save appointment because " & ex.Message
         End Try
@@ -114,25 +148,6 @@ Public Class Form1
     End Sub
 
     Private Sub btnAllAppointments_Click(sender As Object, e As EventArgs) Handles btnAllAppointments.Click
-
-        'Query all appointments not marked Completed
-        Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
-                              Where Not AT_Appointments.Status = "Completed"
-
-        If getAppointments.Count >= 1 Then
-            FlowDashboardPanel.Controls.Clear()
-            'loop through all active appointments
-            For Each Appointment In doAction.AT_Appointments
-                'Create a new appointment card instance
-                Dim NewCard As New AppointmentCard()
-                NewCard.lblType.Text = Appointment.AppointmentType
-                NewCard.lblDetails.Text = Appointment.AppointmentDetails
-                NewCard.lblDate.Text = Appointment.AppointmentDate
-                NewCard.lblTime.Text = Appointment.AppointmentTime
-                NewCard.lblStatus.Text = Appointment.Status
-                'Add the card(s) to the form
-                FlowDashboardPanel.Controls.Add(NewCard)
-            Next
-        End If
+        getAllAppointments()
     End Sub
 End Class
