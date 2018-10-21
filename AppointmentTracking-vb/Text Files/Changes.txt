@@ -60,3 +60,11 @@ This is so if you want to get all appointments by a different control or elsewhe
 to call that getAllAppointments function.
 
 ====================================
+
+==========October 21 2018==========
+
+Nothing major to update here.
+All appointments and today's appointments now display when the form loads and when new appointments have been added.
+This prevents you from having to close out the project and re-open it to see appointments you just added.
+
+====================================

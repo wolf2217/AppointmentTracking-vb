@@ -27,6 +27,8 @@ Public Class ManageAppointments
             doAction.UpdateAppointmentStatus(txtID.Text, txtDate.Text, txtTime.Text, txtStatus.Text)
             pnlStatus.Visible = True
             lblStatus.Text = "Appointment was updated successfully"
+            Form1.getAllAppointments()
+            Form1.getTodaysAppointments()
             pnlTimer.Start()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -51,6 +53,8 @@ Public Class ManageAppointments
             doAction.RemoveAppointment(txtID.Text)
             pnlStatus.Visible = True
             lblStatus.Text = "Appointment was removed successfully"
+            Form1.getAllAppointments()
+            Form1.getTodaysAppointments()
             pnlTimer.Start()
         Catch ex As Exception
             MsgBox(ex.Message)

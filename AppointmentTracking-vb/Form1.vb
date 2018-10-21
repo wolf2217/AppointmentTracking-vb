@@ -9,15 +9,16 @@ Public Class Form1
     ''' </summary>
     ''' 
 #Region "Functions"
-    Private Function getAllAppointments()
+    Public Function getAllAppointments()
         'Query all appointments not marked Completed
         Dim getAppointments = From AT_Appointments In doAction.AT_Appointments
                               Where Not AT_Appointments.Status = "Completed"
 
         If getAppointments.Count >= 1 Then
-            FlowDashboardPanel.Controls.Clear()
             'loop through all active appointments
             For Each Appointment In doAction.AT_Appointments
+                FlowDashboardPanel.Controls.Clear()
+                FlowDashboardPanel.Update()
                 'Create a new appointment card instance
                 Dim NewCard As New AppointmentCard()
                 NewCard.lblType.Text = Appointment.AppointmentType
@@ -32,12 +33,13 @@ Public Class Form1
         Return 0
     End Function
 
-    Private Function getTodaysAppointments()
+    Public Function getTodaysAppointments()
         'Loop through and display appointments for current day
         For Each Appointment In doAction.AT_Appointments
             If Appointment.AppointmentDate = Date.Today.ToLongDateString() _
                 And Appointment.Status = "Upcoming" Then
-
+                FlowLayoutPanel1.Controls.Clear()
+                FlowLayoutPanel1.Update()
                 'Create a new instance of the Appointment card
                 Dim NewCard As New AppointmentCard()
 
@@ -57,7 +59,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'set the min date to today
         cbDate.MinDate = Date.Today
-
+        tabContainer.SelectedTab = MetroTabPage1
         'Add time from Functions => SetTime Module
         SetTime.setHour()
         SetTime.setMinute()
@@ -72,6 +74,7 @@ Public Class Form1
         End If
 
         getTodaysAppointments()
+        getAllAppointments()
 
     End Sub
 
@@ -81,7 +84,8 @@ Public Class Form1
             doAction.CreateNewAppointment(cbDate.Text, cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text, txtType.Text, txtDetails.Text, txtLocation.Text, "Upcoming")
             txtGetDetails.Text = "You have created a " & txtType.Text & " Appointment for " & vbNewLine _
                 & cbDate.Text & " at " & cbHour.Text & ":" & cbMin.Text & " " & cbAmPm.Text & vbNewLine
-            btnAllAppointments.PerformClick()
+            getAllAppointments()
+            getTodaysAppointments()
         Catch ex As Exception
             txtGetDetails.Text = txtGetDetails.Text & vbNewLine & vbNewLine & "Could not save appointment because " & ex.Message
         End Try
