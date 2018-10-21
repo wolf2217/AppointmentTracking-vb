@@ -12,8 +12,12 @@ If you have any issues, just uninstall it and re-install the framework.
 install it from your NuGet Package Manager.
 Tools => NuGet Package Manager => Manage NuGet Packages For Solution
 Under Browse search for MetroModernUI (By Dennis Magno)
-<p align="center">
-<img src="https://image.ibb.co/bVYvrL/AT1.jpg" alt="While creating the appointment" border="0">
-<img src="https://image.ibb.co/dgmtd0/AT2.jpg" alt="Overviewing and saving the appointment" border="0">
-<img src="https://image.ibb.co/hCbtd0/AT3.jpg" alt="Notification of appointment" border="0">
+<p align="left">
+<img src="https://image.ibb.co/eojzi0/new-appointment-1.jpg" alt="New Appointment" border="0">
+<img src="https://image.ibb.co/kPebVf/today-appointments-2.jpg" alt="Today's Appointments" border="0">
+<img src="https://image.ibb.co/hs9obL/all-appointments-3.jpg" alt="All Appointments that are not marked complete" border="0">
+<img src="https://image.ibb.co/iGF5O0/manage-appointment-4.jpg" alt="Manage Selected Appointment" border="0">
+<img src="https://image.ibb.co/bNuzi0/postponed-appointment-5.jpg" alt="Choosing to postpone a appointment" border="0">
+<img src="https://image.ibb.co/c3sKi0/updated-appointment-6.jpg" alt="Updated Appointment Date" border="0">
+<img src="https://image.ibb.co/dMoEGL/updated-dashboard-7.jpg" alt="Display the updated appointment on Dashboard" border="0">
 </p>
